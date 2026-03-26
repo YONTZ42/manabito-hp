@@ -1,0 +1,40 @@
+/app
+  /(site)
+    page.tsx
+    layout.tsx
+/components
+  /ui
+    button.tsx
+    section-heading.tsx
+    container.tsx
+    chip.tsx
+    modal.tsx
+  /layout
+    header.tsx
+    footer.tsx
+  /sections
+    hero-section.tsx
+    concerns-section.tsx
+    services-section.tsx
+    achievements-section.tsx
+    instagram-news-section.tsx
+    contact-section.tsx
+  /cards
+    concern-card.tsx
+    service-slide-card.tsx
+    instagram-post-card.tsx
+/lib
+  constants.ts
+  site.ts
+  motion.ts
+/data
+  services.ts
+  concerns.ts
+  news.ts
+/public
+  /images
+    /hero
+    /services
+    /placeholders
+/styles
+  globals.css
