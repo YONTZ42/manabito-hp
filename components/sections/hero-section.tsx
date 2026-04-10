@@ -46,9 +46,8 @@ export function HeroSection() {
           {heroImages.map((image, index) => (
             <div
               key={image.src}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-700 ${index === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
               aria-hidden={index !== currentIndex}
             >
               <Image
@@ -72,11 +71,10 @@ export function HeroSection() {
                 type="button"
                 aria-label={`スライド ${index + 1} を表示`}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2.5 rounded-full transition-all ${
-                  index === currentIndex
+                className={`h-2.5 rounded-full transition-all ${index === currentIndex
                     ? "w-8 bg-white"
                     : "w-2.5 bg-white/65 hover:bg-white/85"
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -95,9 +93,8 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-text-sub md:text-lg md:leading-8">
-            マナビトは『学び』と『人』を未来へつなぎ、行政支援や視察研修、
-            体験学習、各種セミナーを通じて、子どもから大人まで、
-            すべての人に学びを届けます。
+            マナビトはかけがえのない『マナビ』をすべての『ヒト』に届けます。
+            行政支援から各種セミナーまで、多様な学びを通じて、学びと人を未来へつなぎ、地域社会の豊かな成長に貢献します。
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

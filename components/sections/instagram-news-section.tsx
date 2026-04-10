@@ -1,9 +1,27 @@
-import { InstagramPostCard } from "@/components/cards/instagram-post-card";
-import { NewsCard } from "@/components/cards/news-card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { instagramPosts } from "@/data/instagram-posts";
-import { newsItems } from "@/data/news";
+
+function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode }) {
+  return (
+    <div className="flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-base-border bg-white/60 p-8 text-center backdrop-blur-sm">
+      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-sky/20">
+        {icon}
+      </div>
+      <h4 className="font-heading text-lg font-bold text-text-main">{title}</h4>
+      <div className="mt-3 flex items-center gap-2">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+        </span>
+        <span className="text-sm font-medium text-brand">準備中</span>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-text-sub">
+        現在コンテンツを準備しています。<br />
+        もうしばらくお待ちください。
+      </p>
+    </div>
+  );
+}
 
 export function InstagramNewsSection() {
   return (
@@ -23,46 +41,37 @@ export function InstagramNewsSection() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div>
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-4">
               <h3 className="font-heading text-2xl font-bold text-text-main">
                 Instagram
               </h3>
-              <a href="#" className="text-sm font-medium text-brand">
-                一覧を見る
-              </a>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {instagramPosts.map((post, index) => (
-                <InstagramPostCard
-                  key={post.title}
-                  title={post.title}
-                  date={post.date}
-                  colorIndex={index}
-                />
-              ))}
-            </div>
+            <ComingSoonCard
+              title="Instagram投稿"
+              icon={
+                <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="18" cy="6" r="1.5" fill="currentColor" />
+                </svg>
+              }
+            />
           </div>
 
           <div>
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-4">
               <h3 className="font-heading text-2xl font-bold text-text-main">
                 NEWS
               </h3>
-              <a href="#" className="text-sm font-medium text-brand">
-                お知らせ一覧
-              </a>
             </div>
-            <div className="space-y-4">
-              {newsItems.map((item, index) => (
-                <NewsCard
-                  key={item.title}
-                  title={item.title}
-                  date={item.date}
-                  category={item.category}
-                  colorIndex={index}
-                />
-              ))}
-            </div>
+            <ComingSoonCard
+              title="お知らせ・メディア掲載"
+              icon={
+                <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                </svg>
+              }
+            />
           </div>
         </div>
       </Container>
