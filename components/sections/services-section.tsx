@@ -16,6 +16,7 @@ export function ServicesSection() {
           eyebrow="Services"
           title="ターゲットに合わせて、学びの場を設計します"
           description="行政、教育、企業、地域団体それぞれの目的に応じて、企画・調整・学びの導線づくりまで含めてサポートします。"
+          descriptionColor="rgb(36, 53, 51)"
         />
       </Container>
 

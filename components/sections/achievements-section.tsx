@@ -12,6 +12,7 @@ export function AchievementsSection() {
               eyebrow="Achievements"
               title="代表の経験と実践が、信頼の土台です"
               description="地域の現場に入りながら、学びの設計、対話の場づくり、研修や視察の企画支援を積み重ねてきた実績を、今後ここに掲載していきます。"
+              descriptionColor="rgb(36, 53, 51)"
             />
             <div className="mt-6 flex flex-wrap gap-3">
               <Chip>地域連携</Chip>

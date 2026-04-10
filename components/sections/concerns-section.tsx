@@ -18,6 +18,7 @@ export function ConcernsSection() {
           title="こんなお悩みはありませんか？"
           description="現場の声を集めたい、視察や学びの場をつくりたい、でも企画や調整まで手が回らない。そんな悩みに、地域と実践の視点から伴走します。"
           align="center"
+          descriptionColor="rgb(36, 53, 51)"
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
