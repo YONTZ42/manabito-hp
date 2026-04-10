@@ -9,9 +9,14 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="overflow-hidden bg-base-bg py-16 md:py-24"
+      className="relative overflow-hidden bg-base-bg py-16 md:py-24"
     >
-      <Container>
+      {/* Colorful background decorations */}
+      <div className="absolute -left-20 top-20 h-56 w-56 rounded-full bg-accent-sky/25 blur-3xl" />
+      <div className="absolute -right-10 top-40 h-48 w-48 rounded-full bg-accent-peach/30 blur-3xl" />
+      <div className="absolute left-1/2 bottom-20 h-40 w-40 rounded-full bg-accent-lime/25 blur-3xl" />
+      
+      <Container className="relative">
         <SectionHeading
           eyebrow="Services"
           title="ターゲットに合わせて、学びの場を設計します"

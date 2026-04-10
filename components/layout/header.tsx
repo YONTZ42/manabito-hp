@@ -1,10 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+
+// ロゴ画像のパス（画像がある場合は設定してください）
+const LOGO_IMAGE_PATH = "/images/logo.png";
 
 const navItems = [
   { label: "理念", href: "#top" },
@@ -76,8 +80,22 @@ export function Header() {
             className="group flex min-w-0 items-center gap-3"
             aria-label="合同会社マナビト トップへ戻る"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white shadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
-              M
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-brand shadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
+              <Image
+                src={LOGO_IMAGE_PATH}
+                alt="マナビト ロゴ"
+                fill
+                className="object-cover"
+                onError={(e) => {
+                  // 画像が見つからない場合はフォールバック表示
+                  const target = e.currentTarget;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = '<span class="flex h-full w-full items-center justify-center text-sm font-bold text-white">M</span>';
+                  }
+                }}
+              />
             </div>
 
             <div className="min-w-0">

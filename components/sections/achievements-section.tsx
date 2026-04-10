@@ -4,8 +4,13 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function AchievementsSection() {
   return (
-    <section id="achievements" className="bg-white py-16 md:py-24">
-      <Container>
+    <section id="achievements" className="relative overflow-hidden bg-white py-16 md:py-24">
+      {/* Colorful background decorations */}
+      <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-accent-sky/30 blur-3xl" />
+      <div className="absolute -right-20 bottom-20 h-56 w-56 rounded-full bg-accent-peach/40 blur-3xl" />
+      <div className="absolute left-1/3 bottom-10 h-40 w-40 rounded-full bg-accent-lime/30 blur-3xl" />
+      
+      <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <SectionHeading
@@ -15,16 +20,16 @@ export function AchievementsSection() {
               descriptionColor="rgb(36, 53, 51)"
             />
             <div className="mt-6 flex flex-wrap gap-3">
-              <Chip>地域連携</Chip>
-              <Chip>視察研修</Chip>
-              <Chip>教育プログラム</Chip>
-              <Chip>人材育成</Chip>
+              <Chip variant="sky">地域連携</Chip>
+              <Chip variant="peach">視察研修</Chip>
+              <Chip variant="lime">教育プログラム</Chip>
+              <Chip variant="pink">人材育成</Chip>
             </div>
           </div>
 
           <div className="rounded-[32px] border border-base-border bg-base-bg p-6 shadow-soft md:p-8">
             <div className="grid gap-6 md:grid-cols-[220px_1fr] md:items-start">
-              <div className="aspect-[4/5] rounded-[28px] bg-accent-sky/70 bg-hero-grid" />
+              <div className="aspect-[4/5] rounded-[28px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 bg-hero-grid" />
               <div>
                 <p className="text-sm font-medium text-brand">代表プロフィール</p>
                 <h3 className="mt-2 font-heading text-2xl font-bold text-text-main">

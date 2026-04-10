@@ -15,7 +15,7 @@ export function ConcernCard({ index, title, description, className }: ConcernCar
         className,
       )}
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent.sky font-latin text-lg font-bold text-brand">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-sky to-accent-pink/50 font-latin text-lg font-bold text-brand shadow-sm">
         {String(index).padStart(2, "0")}
       </div>
       <h3 className="mt-5 font-heading text-xl font-bold leading-snug text-text.main">{title}</h3>

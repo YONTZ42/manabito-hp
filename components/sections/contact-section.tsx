@@ -11,9 +11,13 @@ export function ContactSection() {
 
   return (
     <>
-      <section id="contact" className="bg-white py-16 md:py-24">
-        <Container>
-          <div className="rounded-[36px] bg-brand px-6 py-10 text-white shadow-soft md:px-10 md:py-14">
+      <section id="contact" className="relative overflow-hidden bg-white py-16 md:py-24">
+        {/* Background decorations */}
+        <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-accent-sky/40 blur-3xl" />
+        <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-accent-peach/40 blur-3xl" />
+        
+        <Container className="relative">
+          <div className="rounded-[36px] bg-gradient-to-br from-brand to-brand-dark px-6 py-10 text-white shadow-soft md:px-10 md:py-14">
             <SectionHeading
               eyebrow="Contact"
               title="まずはお気軽にご相談ください"

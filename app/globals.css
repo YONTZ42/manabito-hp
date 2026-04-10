@@ -9,8 +9,9 @@
   --foreground: #243533;
   --surface: #ffffff;
   --border: #dce7e3;
-  --brand: #2e6f67;
-  --brand-soft: #d9ece8;
+  --brand: #2774BA;
+  --brand-soft: #D7E8F7;
+  --brand-dark: #1E5A8F;
   --text-sub: #5a6b68;
 }
 
@@ -29,7 +30,7 @@ body {
 }
 
 *::selection {
-  background: rgba(46, 111, 103, 0.18);
+  background: rgba(39, 116, 186, 0.18);
   color: #243533;
 }
 
@@ -56,7 +57,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(46, 111, 103, 0.45);
+  outline: 2px solid rgba(39, 116, 186, 0.45);
   outline-offset: 3px;
 }
 
@@ -112,9 +113,9 @@ main {
 /* 背景装飾 */
 .bg-soft-radial {
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(215, 235, 247, 0.7), transparent 28%),
-    radial-gradient(circle at 80% 25%, rgba(246, 215, 195, 0.65), transparent 25%),
-    radial-gradient(circle at 50% 85%, rgba(229, 240, 207, 0.55), transparent 22%);
+    radial-gradient(circle at 20% 20%, rgba(215, 235, 247, 0.8), transparent 32%),
+    radial-gradient(circle at 80% 25%, rgba(247, 215, 232, 0.7), transparent 28%),
+    radial-gradient(circle at 50% 85%, rgba(242, 198, 109, 0.4), transparent 25%);
 }
 
 .bg-section-wash {
