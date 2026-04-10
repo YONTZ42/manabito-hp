@@ -26,6 +26,7 @@ export function ContactSection() {
                 href="tel:090-7823-4128"
                 variant="secondary"
                 className="border-white/50 bg-white text-soft hover:bg-white/90"
+                style={{ color: '#000000' }}
               >
                 電話で問い合わせる
               </Button>
