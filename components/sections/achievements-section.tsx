@@ -6,10 +6,9 @@ import Image from "next/image";
 export function AchievementsSection() {
   return (
     <section id="achievements" className="relative overflow-hidden bg-white py-16 md:py-24">
-      {/* Colorful background decorations */}
-      <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-accent-sky/30 blur-3xl" />
-      <div className="absolute -right-20 bottom-20 h-56 w-56 rounded-full bg-accent-peach/40 blur-3xl" />
-      <div className="absolute left-1/3 bottom-10 h-40 w-40 rounded-full bg-accent-lime/30 blur-3xl" />
+      {/* Background decorations */}
+      <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-brand-soft/50 blur-3xl" />
+      <div className="absolute -right-20 bottom-20 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
 
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -21,10 +20,10 @@ export function AchievementsSection() {
               descriptionColor="rgb(36, 53, 51)"
             />
             <div className="mt-6 flex flex-wrap gap-3">
-              <Chip variant="sky">地域連携</Chip>
-              <Chip variant="peach">視察研修</Chip>
-              <Chip variant="lime" >教育プログラム</Chip>
-              <Chip variant="orange" >人材育成</Chip>
+              <Chip variant="brand">地域連携</Chip>
+              <Chip variant="brand">視察研修</Chip>
+              <Chip variant="brand">教育プログラム</Chip>
+              <Chip variant="brand">人材育成</Chip>
             </div>
           </div>
 
@@ -33,8 +32,8 @@ export function AchievementsSection() {
             <div className="grid gap-6 md:grid-cols-[220px_1fr] md:items-start">
               {/* 写真＋グラデーション装飾のコンテナ */}
               <div className="relative">
-                {/* 背面のグラデーション装飾（少しずらして配置するとオシャレです） */}
-                <div className="absolute -inset-2 rotate-3 rounded-[10px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 opacity-50 blur-sm" />
+                {/* 背面の装飾 */}
+                <div className="absolute -inset-2 rotate-3 rounded-[10px] bg-brand-soft opacity-60 blur-sm" />
 
                 {/* 写真本体 */}
                 <div className="relative aspect-[3/5] overflow-hidden rounded-[20px] bg-gradient-to-br from-accent-sky/20 to-accent-pink/20">
@@ -91,7 +90,7 @@ export function AchievementsSection() {
                     「やりたい」が、街の「おもしろい」に変わる。
                   </p>
                   <p>
-                    その社会の変革こそが、次世代への本当の教育だと信じています。
+                    その社会の変革こそが、次世代への本当の教育だと信じ��います。
                   </p>
                 </div>
 
@@ -100,15 +99,15 @@ export function AchievementsSection() {
                   <p className="mb-3 text-sm font-semibold text-text-main">主な活動領域</p>
                   <ul className="space-y-2 text-sm leading-relaxed text-text-sub md:text-base">
                     <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-sky" />
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand" />
                       地域密着型の研修・体験学習プログラムの設計
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-peach" />
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-muted" />
                       行政視察や先進事例学習の企画調整
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-accent-lime" />
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-brand-soft" />
                       子ども、若者、地域の声を活かす場づくり支援
                     </li>
                   </ul>

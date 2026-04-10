@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-type AccentTone = "mint" | "sky" | "peach" | "lemon" | "lavender" | "pink" | "coral";
+type AccentTone = "brand" | "brandLight" | "brandDark" | "yellow";
 
 type ServiceSlideCardProps = {
   title: string;
@@ -11,33 +11,17 @@ type ServiceSlideCardProps = {
 };
 
 const toneClassMap: Record<AccentTone, string> = {
-  // ミント：ライムと混ぜて、ネオンに近いフレッシュな緑に
-  mint: "bg-gradient-to-br from-accent-mint via-accent-mint to-accent-lime",
-  
-  // スカイ：あえて青と緑を混ぜて、深く鮮やかなターコイズ系に
-  sky: "bg-gradient-to-br from-accent-sky via-accent-sky to-accent-mint",
-  
-  // ピーチ：オレンジをしっかり混ぜて、夕焼けのようなエネルギーを出す
-  peach: "bg-gradient-to-br from-accent-peach via-accent-peach to-accent-orange",
-  
-  // レモン：黄色とオレンジで、ビタミンカラーを強調
-  lemon: "bg-gradient-to-br from-accent-yellow via-accent-yellow to-accent-orange",
-  
-  // ラベンダー：スカイとピンクをしっかり混ぜ、青紫〜赤紫の対比を作る
-  lavender: "bg-gradient-to-br from-accent-sky via-accent-pink to-accent-pink",
-  
-  // ピンク：コーラルを混ぜて、赤みの強い情熱的なピンクに
-  pink: "bg-gradient-to-br from-accent-pink via-accent-pink to-accent-coral",
-  
-  // コーラル：最もパキッとした赤系。オレンジとぶつけて力強く
-  coral: "bg-gradient-to-br from-accent-coral via-accent-coral to-accent-orange",
+  brand: "bg-brand",
+  brandLight: "bg-brand-soft",
+  brandDark: "bg-brand-dark",
+  yellow: "bg-accent-yellow",
 };
 
 export function ServiceSlideCard({
   title,
   description,
   imageSrc,
-  accentTone = "mint",
+  accentTone = "brand",
 }: ServiceSlideCardProps) {
 return(
 <div>
