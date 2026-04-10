@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 // ロゴ画像のパス（画像がある場合は設定してください）
-const LOGO_IMAGE_PATH = "/images/logo.png";
+const LOGO_IMAGE_PATH = "/images/MANABITO_LOGO.png";
 
 const navItems = [
   { label: "理念", href: "#top" },
@@ -80,11 +80,12 @@ export function Header() {
             className="group flex min-w-0 items-center gap-3"
             aria-label="合同会社マナビト トップへ戻る"
           >
-            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-brand shadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
+            <div className="relative h-11 w-11 shrink-0 overflow-hiddenshadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
               <Image
                 src={LOGO_IMAGE_PATH}
                 alt="マナビト ロゴ"
                 fill
+                sizes="(max-width: 768px) 30vw, 50px"
                 className="object-cover"
                 onError={(e) => {
                   // 画像が見つからない場合はフォールバック表示

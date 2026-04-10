@@ -7,17 +7,18 @@ import { Container } from "@/components/ui/container";
 
 const heroImages = [
   {
-    src: "/images/hero/tsuchiura_from_sky.jpg",
-    alt: "土浦の風景",
+    src: "/images/hero/top_page1.JPG",
+    alt: "マナビトが作る若者と行政との交流",
+  },
+  {
+    src: "/images/hero/top_page2.JPG",
+    alt: "酒井慶太が放課後子供食堂について講義する様子",
   },
   {
     src: "/images/hero/mountain_tsukuba.jpg",
     alt: "筑波山",
   },
-  {
-    src: "/images/hero/tsuchiura_ship.png",
-    alt: "土浦の帆船",
-  },
+
 ];
 
 const serviceSummaries = [

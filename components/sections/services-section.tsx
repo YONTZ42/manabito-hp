@@ -25,19 +25,25 @@ export function ServicesSection() {
         />
       </Container>
 
-      <div className="mt-12 overflow-hidden">
-        <div className="pause-marquee flex w-max gap-5 px-4 animate-marquee md:px-6 lg:px-8">
-          {loopedServices.map((service, index) => (
+    <div className="mt-12 w-full">
+      {/* overflow-x-auto: 横スクロールを有効化
+        scrollbar-hide: スクロールバーを隠したい場合（任意）
+        flex-nowrap: 折り返さないように設定
+      */}
+      <div className="flex w-full overflow-x-auto pb-6 gap-5 px-4 md:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide">
+        {services.map((service, index) => (
+          <div key={`${service.title}-${index}`} className="snap-center">
             <ServiceSlideCard
-              key={`${service.title}-${index}`}
               title={service.title}
               description={service.description}
               imageSrc={service.imageSrc}
               accentTone={service.accentTone}
             />
-          ))}
-        </div>
+          </div>
+        ))}
+        
       </div>
+    </div>
     </section>
   );
 }

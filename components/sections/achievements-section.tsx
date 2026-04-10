@@ -1,6 +1,7 @@
 import { Chip } from "@/components/ui/chip";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import Image from "next/image";
 
 export function AchievementsSection() {
   return (
@@ -27,13 +28,23 @@ export function AchievementsSection() {
             </div>
           </div>
 
+
           <div className="rounded-[32px] border border-base-border bg-base-bg p-6 shadow-soft md:p-8">
             <div className="grid gap-6 md:grid-cols-[220px_1fr] md:items-start">
-              <div className="aspect-[4/5] rounded-[28px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 bg-hero-grid" />
+              <div className=" rounded-[28px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 bg-hero-grid" />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-gradient-to-br from-accent-sky/20 to-accent-pink/20">
+                <Image
+                  src="/images/sakai_keita.jpg" // 画像パスを適切に変更してください
+                  alt="代表 酒井 慶太のプロフィール写真"
+                  fill
+                  className="absolute h-full w-full object-cover"
+                  sizes="(max-width: 768px) 500vw, 500px"
+                />
+                </div>
               <div>
                 <p className="text-sm font-medium text-brand">代表プロフィール</p>
                 <h3 className="mt-2 font-heading text-2xl font-bold text-text-main">
-                  酒井先生（仮）
+                  酒井 慶太
                 </h3>
                 <p className="mt-4 text-base leading-8 text-text-sub">
                   地域、教育、行政、現場の声をつなぎながら、学びを具体的な実践へ落とし込む伴走者として活動。
@@ -51,3 +62,4 @@ export function AchievementsSection() {
     </section>
   );
 }
+
