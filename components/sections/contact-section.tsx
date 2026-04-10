@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Modal } from "@/components/ui/modal";
+import { ContactFormModal } from "@/components/contact-form-modal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function ContactSection() {
@@ -46,22 +46,7 @@ export function ContactSection() {
         </Container>
       </section>
 
-      <Modal open={open} onClose={() => setOpen(false)} title="お問い合わせフォーム">
-        <div className="space-y-4">
-          <p>
-            初期実装ではモーダルの見た目のみを用意しています。後続でフォーム送信機能やバリデーションを追加できます。
-          </p>
-          <div className="rounded-3xl bg-base-bg p-4 text-sm leading-7">
-            ・お名前
-            <br />
-            ・ご所属
-            <br />
-            ・お問い合わせ内容
-            <br />
-            ・連絡先メールアドレス
-          </div>
-        </div>
-      </Modal>
+      <ContactFormModal open={open} onClose={() => setOpen(false)} />
     </>
   );
 }

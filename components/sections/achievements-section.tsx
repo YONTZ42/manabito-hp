@@ -75,7 +75,7 @@ export function AchievementsSection() {
                     少子高齢化、地域の衰退、そして正解のないこれからの日本。疲弊していく社会を前に、教室で知識を教えるだけでは、子供たちの未来に責任を持てないと感じたからです。
                   </p>
                   <p>
-                    最先端の学びと、地域に根ざした教育。その両方の現場で、生徒の可能性が「社会」と接続した瞬間に放たれる<span className="font-semibold text-text-main">爆発的な熱狂</span>を、私は誰よりも見てきました。
+                    最先端の学びと、地域に根ざした教育。その両方の現場で、生徒の可能性が「社会」と接続した瞬間に放たれる爆発的な熱狂を、私は誰よりも見てきました。
                   </p>
                   <p>
                     だからこそ、学びと街をシームレスにつなぐ伴走者として<span className="font-semibold text-brand">『マナビト』</span>を立ち上げました。現在は次世代の街づくりを担う団体の代表も務め、行政と若者の間に立ち、共に未来を企てる場をデザインしています。
@@ -83,12 +83,14 @@ export function AchievementsSection() {
                 </div>
 
                 {/* ビジョンメッセージ */}
-                <div className="mt-6 rounded-2xl bg-gradient-to-r from-accent-sky/10 to-accent-lime/10 p-4">
-                  <p className="text-center text-base font-bold leading-relaxed text-text-main md:text-lg">
-                    街全体をキャンパスに。<br className="hidden sm:block" />
-                    <span className="text-brand">「やりたい」が、街の「おもしろい」に変わる。</span>
+                <div className="mt-6 space-y-4 text-base leading-relaxed text-text-sub">
+                  <p >
+                    街全体をキャンパスに。
                   </p>
-                  <p className="mt-2 text-center text-sm text-text-sub">
+                  <p>
+                    「やりたい」が、街の「おもしろい」に変わる。
+                  </p>
+                  <p>
                     その社会の変革こそが、次世代への本当の教育だと信じています。
                   </p>
                 </div>
