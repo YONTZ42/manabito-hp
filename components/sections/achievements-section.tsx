@@ -23,24 +23,33 @@ export function AchievementsSection() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Chip variant="sky">地域連携</Chip>
               <Chip variant="peach">視察研修</Chip>
-              <Chip variant="lime">教育プログラム</Chip>
-              <Chip variant="pink">人材育成</Chip>
+              <Chip variant="lime" >教育プログラム</Chip>
+              <Chip variant="orange" >人材育成</Chip>
             </div>
           </div>
 
 
           <div className="rounded-[32px] border border-base-border bg-base-bg p-6 shadow-soft md:p-8">
             <div className="grid gap-6 md:grid-cols-[220px_1fr] md:items-start">
-              <div className=" rounded-[28px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 bg-hero-grid" />
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-gradient-to-br from-accent-sky/20 to-accent-pink/20">
-                <Image
-                  src="/images/sakai_keita.jpg" // 画像パスを適切に変更してください
-                  alt="代表 酒井 慶太のプロフィール写真"
-                  fill
-                  className="absolute h-full w-full object-cover"
-                  sizes="(max-width: 768px) 500vw, 500px"
-                />
+              {/* 写真＋グラデーション装飾のコンテナ */}
+              <div className="relative">
+                {/* 背面のグラデーション装飾（少しずらして配置するとオシャレです） */}
+                <div className="absolute -inset-2 rotate-3 rounded-[10px] bg-gradient-to-br from-accent-sky via-accent-pink/40 to-accent-lime/50 opacity-50 blur-sm" />
+                
+                {/* 写真本体 */}
+                <div className="relative aspect-[3/5] overflow-hidden rounded-[20px] bg-gradient-to-br from-accent-sky/20 to-accent-pink/20">
+                  <Image
+                    src="/images/sakai_keita.jpg"
+                    alt="代表 酒井 慶太のプロフィール写真"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 220px"
+                    priority
+                  />
                 </div>
+              </div>
+
+              {/* テキストコンテンツ */}
               <div>
                 <p className="text-sm font-medium text-brand">代表プロフィール</p>
                 <h3 className="mt-2 font-heading text-2xl font-bold text-text-main">

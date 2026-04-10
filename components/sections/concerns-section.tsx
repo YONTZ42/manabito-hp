@@ -9,7 +9,7 @@ export function ConcernsSection() {
       id="concerns"
       className="relative overflow-hidden bg-white py-16 md:py-24"
     >
-      <div className="absolute right-0 top-10 h-48 w-48 rounded-full bg-accent-sky/60 blur-3xl" />
+      <div className="absolute right-0 top-10 h-48 w-48 rounded-full bg-accent-sky/23 blur-3xl" />
       <div className="absolute left-0 bottom-0 h-48 w-48 rounded-full bg-accent-peach/60 blur-3xl" />
       <div className="absolute left-1/2 top-1/3 h-32 w-32 -translate-x-1/2 rounded-full bg-accent-pink/40 blur-3xl" />
       <div className="absolute right-1/4 bottom-1/4 h-36 w-36 rounded-full bg-accent-lime/50 blur-3xl" />

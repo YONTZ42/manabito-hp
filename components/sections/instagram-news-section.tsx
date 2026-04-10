@@ -17,7 +17,7 @@ export function InstagramNewsSection() {
         <SectionHeading
           eyebrow="Updates"
           title="Instagram と最新情報"
-          description="活動の様子やお知らせを通して、マナビトの今を伝えます。初期実装ではダミーデータ表示にして、後からInstagram連携やCMS連携へつなげやすくします。"
+          description="活動の様子やお知らせを通して、マナビトの今を伝えます。Instagramや各種メディアをまとめる予定です！"
           descriptionColor="rgb(36, 53, 51)"
         />
 

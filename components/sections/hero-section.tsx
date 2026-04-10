@@ -103,10 +103,11 @@ export function HeroSection() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {serviceSummaries.map((item, index) => {
               const colors = [
-                "bg-accent-sky border-accent-sky/50 text-brand",
-                "bg-accent-peach border-accent-peach/50 text-brand-dark",
-                "bg-accent-lime border-accent-lime/50 text-brand",
-                "bg-accent-pink border-accent-pink/50 text-brand-dark",
+                "bg-accent-sky border-accent-sky/50 text-text.sub",
+                "bg-accent-peach border-accent-peach/50 text-text.sub",
+                "bg-accent-lime border-accent-lime/50 text-text.sub",
+                "bg-accent-orange/80 border-accent-orange/50 text-text.sub",
+                "bg-accent-pink border-accent-pink/50 text-text.sub",
               ];
               return (
                 <span
@@ -120,8 +121,10 @@ export function HeroSection() {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="#services">サービスを見る</Button>
-            <Button href="#contact" variant="secondary">
+            <Button href="#services" variant="primary" size="lg" className="shadow-strong">
+              サービスを見る
+            </Button>
+            <Button href="#contact" variant="secondary" size="lg" className="shadow-strong">
               お問い合わせ
             </Button>
           </div>

@@ -34,7 +34,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-8 text-text.sub md:text-lg" style={{ color: descriptionColor || '#ffffff' }}>{description}</p>
+        <p className="mt-4 text-base leading-8 text-text.main md:text-lg" style={{ color: descriptionColor || '#5A6B68' }}>{description}</p>
       ) : null}
     </div>
   );

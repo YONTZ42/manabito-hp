@@ -7,16 +7,30 @@ type ServiceSlideCardProps = {
   description: string;
   imageSrc: string;
   accentTone?: AccentTone;
+  titleBorderColor?: string;
 };
 
 const toneClassMap: Record<AccentTone, string> = {
-  mint: "bg-gradient-to-br from-brand-soft to-accent-lime/60",
-  sky: "bg-gradient-to-br from-accent-sky to-accent-pink/40",
-  peach: "bg-gradient-to-br from-accent-peach to-accent-yellow/60",
-  lemon: "bg-gradient-to-br from-accent-yellow/50 to-accent-lime/50",
-  lavender: "bg-gradient-to-br from-accent-lime to-accent-sky/60",
-  pink: "bg-gradient-to-br from-accent-pink to-accent-peach/60",
-  coral: "bg-gradient-to-br from-accent-peach to-accent-yellow/70",
+  // ミント：ライムと混ぜて、ネオンに近いフレッシュな緑に
+  mint: "bg-gradient-to-br from-accent-mint via-accent-mint to-accent-lime",
+  
+  // スカイ：あえて青と緑を混ぜて、深く鮮やかなターコイズ系に
+  sky: "bg-gradient-to-br from-accent-sky via-accent-sky to-accent-mint",
+  
+  // ピーチ：オレンジをしっかり混ぜて、夕焼けのようなエネルギーを出す
+  peach: "bg-gradient-to-br from-accent-peach via-accent-peach to-accent-orange",
+  
+  // レモン：黄色とオレンジで、ビタミンカラーを強調
+  lemon: "bg-gradient-to-br from-accent-yellow via-accent-yellow to-accent-orange",
+  
+  // ラベンダー：スカイとピンクをしっかり混ぜ、青紫〜赤紫の対比を作る
+  lavender: "bg-gradient-to-br from-accent-sky via-accent-pink to-accent-pink",
+  
+  // ピンク：コーラルを混ぜて、赤みの強い情熱的なピンクに
+  pink: "bg-gradient-to-br from-accent-pink via-accent-pink to-accent-coral",
+  
+  // コーラル：最もパキッとした赤系。オレンジとぶつけて力強く
+  coral: "bg-gradient-to-br from-accent-coral via-accent-coral to-accent-orange",
 };
 
 export function ServiceSlideCard({
@@ -28,7 +42,7 @@ export function ServiceSlideCard({
 return(
 <div>
     {imageSrc ? (
-      <article className="w-[300px] shrink-0 overflow-hidden rounded-[30px] border border-base.border bg-white shadow-soft md:w-[360px]">
+      <article className="w-[400px] shrink-0 overflow-hidden rounded-[30px] border border-base.brand bg-white shadow-soft md:w-[360px]">
         <div className={cn("relative h-[260px] w-full", toneClassMap[accentTone])}>
           <div className="absolute inset-0 bg-hero-grid bg-hero-grid opacity-100" >
             <Image
@@ -43,8 +57,9 @@ return(
             
           </div>
           </div>
-          <div className="h-[140px] p-6">
+          <div className="h-[160px] p-6">
             <h3 className="font-heading text-xl font-bold leading-snug text-text.main">{title}</h3>
+            <div className={cn("mt-2 h-0.5 w-40", toneClassMap[accentTone])} />
             <p className="mt-3 text-sm leading-7 text-text.sub">{description}</p>
           </div>
       </article>

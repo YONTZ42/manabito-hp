@@ -17,7 +17,7 @@ export function ContactSection() {
         <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-accent-peach/40 blur-3xl" />
         
         <Container className="relative">
-          <div className="rounded-[36px] bg-gradient-to-br from-brand to-brand-dark px-6 py-10 text-white shadow-soft md:px-10 md:py-14">
+          <div className="rounded-[36px] bg-white border border-brand from-brand to-brand px-6 py-10 text-main shadow-soft md:px-10 md:py-14">
             <SectionHeading
               eyebrow="Contact"
               title="まずはお気軽にご相談ください"
@@ -28,17 +28,18 @@ export function ContactSection() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 href="tel:090-7823-4128"
-                variant="secondary"
-                className="border-white/50 bg-white text-soft hover:bg-white/90"
+                variant="ghost"
+                className="border border-accent-yellow bg-white text-text-main hover:bg-white/60"
                 style={{ color: 'rgb(36, 53, 51)' }}
               >
                 電話で問い合わせる
               </Button>
               <Button
                 onClick={() => setOpen(true)}
-                className="bg-accent-yellow text-text-main hover:opacity-95"
+                variant="yellow"
+                className="bg-accent-yellow text-text-main hover:opacity-95 shadow-soft"
               >
-                フォームで問い合わせる
+                お問い合わせフォーム
               </Button>
             </div>
           </div>

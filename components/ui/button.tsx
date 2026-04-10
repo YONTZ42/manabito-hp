@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "yellow";
 type ButtonSize = "sm" | "md" | "lg";
 
 type CommonProps = {
@@ -17,12 +17,15 @@ type ButtonProps = CommonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95",
+    "bg-brand !text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95",
   secondary:
     "border border-brand/20 bg-white text-brand hover:bg-brand.soft/40",
   ghost:
     "bg-transparent text-text.main hover:bg-white/70",
-};
+  yellow:
+    "bg-accent-yellow text-text-main hover:bg-accent-yellow/90",
+  
+  };
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: "h-10 px-4 text-sm",
@@ -32,6 +35,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const baseClass =
   "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 disabled:pointer-events-none disabled:opacity-50";
+
 
 export function Button({
   children,

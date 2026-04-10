@@ -15,23 +15,25 @@ export default {
           dark: "#1E5A8F",
         },
         accent: {
-          yellow: "#F2C66D",
+          yellow: "#f2f06d",
           orange: "#F5A962",
-          peach: "#F6D7C3",
-          sky: "#D7EBF7",
-          lime: "#E5F0CF",
-          pink: "#F7D7E8",
+          peach: "#fca9d7",
+          sky: "#6cb5fe",
+          lime: "#d7f796",
+          pink: "#ff89c8",
           coral: "#FF7F6E",
-          mint: "#7ED6B8",
+          mint: "#7dffd4",
         },
         base: {
           bg: "#FBF8F1",
           surface: "#FFFFFF",
           border: "#DCE7E3",
+          brand: "#2774BA",
         },
         text: {
           main: "#243533",
           sub: "#5A6B68",
+          white: "#f8fdff",
         },
       },
       fontFamily: {
@@ -41,6 +43,7 @@ export default {
       },
       boxShadow: {
         soft: "0 10px 30px rgba(36, 53, 51, 0.08)",
+        strong: "0 12px 24px rgba(36, 53, 51, 0.20), 0 5px 8px rgba(36, 53, 51, 0.20)",
       },
       borderRadius: {
         "4xl": "2rem",
