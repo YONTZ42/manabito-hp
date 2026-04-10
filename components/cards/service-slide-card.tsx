@@ -26,41 +26,33 @@ export function ServiceSlideCard({
 return(
 <div>
     {imageSrc ? (
-      <article className="w-[400px] shrink-0 overflow-hidden rounded-[30px] border border-base.brand bg-white shadow-soft md:w-[360px]">
-        <div className={cn("relative h-[260px] w-full", toneClassMap[accentTone])}>
-          <div className="absolute inset-0 bg-hero-grid bg-hero-grid opacity-100" >
-            <Image
-              src={imageSrc} // 画像パスを適切に変更してください
-              alt={description}
-              fill
-              priority={title === "子ども・若者からの意見を聞きたい"} // 最初のカードを優先的に読み込む
-
-              className="absolute h-full w-full object-cover"
-              sizes="(max-width: 768px) 500vw, 500px"
-            />
-            
-          </div>
-          </div>
-          <div className="h-[160px] p-6">
-            <h3 className="font-heading text-xl font-bold leading-snug text-text.main">{title}</h3>
-            <div className={cn("mt-2 h-0.5 w-40", toneClassMap[accentTone])} />
-            <p className="mt-3 text-sm leading-7 text-text.sub">{description}</p>
-          </div>
+      <article className="w-[260px] shrink-0 overflow-hidden rounded-2xl border border-base-border bg-white shadow-soft">
+        <div className={cn("relative h-[160px] w-full", toneClassMap[accentTone])}>
+          <Image
+            src={imageSrc}
+            alt={description}
+            fill
+            priority={title === "子ども・若者からの意見を聞きたい"}
+            className="absolute h-full w-full object-cover"
+            sizes="260px"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="font-heading text-base font-bold leading-snug text-text-main">{title}</h3>
+          <div className={cn("mt-2 h-0.5 w-20", toneClassMap[accentTone])} />
+          <p className="mt-2 text-xs leading-relaxed text-text-sub">{description}</p>
+        </div>
       </article>
 
     ) : (
-      <article className="w-[300px] shrink-0 overflow-hidden rounded-[30px] border border-base.border bg-white shadow-soft md:w-[360px]">
-        <div className={cn("relative h-[260px] w-full", toneClassMap[accentTone])}>
-          <div className="absolute inset-0 bg-hero-grid bg-hero-grid opacity-70" />
-          <div className="absolute inset-5 rounded-[24px] border border-white/50 bg-white/25" />
-          <div className="absolute inset-x-6 bottom-6 rounded-[24px] bg-white/80 p-4 backdrop-blur-sm">
-            <p className="text-sm font-medium text-text.sub">イメージ画像</p>
-            <p className="mt-1 truncate text-sm text-text.sub">{imageSrc}</p>
-          </div>
+      <article className="w-[260px] shrink-0 overflow-hidden rounded-2xl border border-base-border bg-white shadow-soft">
+        <div className={cn("relative h-[160px] w-full", toneClassMap[accentTone])}>
+          <div className="absolute inset-0 bg-hero-grid opacity-70" />
+          <div className="absolute inset-3 rounded-xl border border-white/50 bg-white/25" />
         </div>
-        <div className="h-[140px] p-6">
-          <h3 className="font-heading text-xl font-bold leading-snug text-text.main">{title}</h3>
-          <p className="mt-3 text-sm leading-7 text-text.sub">{description}</p>
+        <div className="p-4">
+          <h3 className="font-heading text-base font-bold leading-snug text-text-main">{title}</h3>
+          <p className="mt-2 text-xs leading-relaxed text-text-sub">{description}</p>
         </div>
       </article>
     )
