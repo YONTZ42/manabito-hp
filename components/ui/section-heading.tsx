@@ -6,6 +6,7 @@ type SectionHeadingProps = {
   description?: string;
   align?: "left" | "center";
   className?: string;
+  descriptionColor?: string;
 };
 
 export function SectionHeading({
@@ -14,6 +15,7 @@ export function SectionHeading({
   description,
   align = "left",
   className,
+  descriptionColor,
 }: SectionHeadingProps) {
   return (
     <div
@@ -32,7 +34,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-8 text-text.sub md:text-lg">{description}</p>
+        <p className="mt-4 text-base leading-8 text-text.sub md:text-lg" style={{ color: descriptionColor || '#ffffff' }}>{description}</p>
       ) : null}
     </div>
   );

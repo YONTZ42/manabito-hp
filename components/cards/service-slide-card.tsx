@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type AccentTone = "mint" | "sky" | "peach" | "lemon" | "lavender";
+type AccentTone = "mint" | "sky" | "peach" | "lemon" | "lavender" | "pink" | "coral";
 
 type ServiceSlideCardProps = {
   title: string;
@@ -10,11 +10,13 @@ type ServiceSlideCardProps = {
 };
 
 const toneClassMap: Record<AccentTone, string> = {
-  mint: "bg-brand.soft",
-  sky: "bg-accent.sky",
-  peach: "bg-accent.peach",
-  lemon: "bg-accent.yellow/40",
-  lavender: "bg-accent.lime",
+  mint: "bg-gradient-to-br from-brand-soft to-accent-lime/60",
+  sky: "bg-gradient-to-br from-accent-sky to-accent-pink/40",
+  peach: "bg-gradient-to-br from-accent-peach to-accent-yellow/60",
+  lemon: "bg-gradient-to-br from-accent-yellow/50 to-accent-lime/50",
+  lavender: "bg-gradient-to-br from-accent-lime to-accent-sky/60",
+  pink: "bg-gradient-to-br from-accent-pink to-accent-peach/60",
+  coral: "bg-gradient-to-br from-accent-peach to-accent-yellow/70",
 };
 
 export function ServiceSlideCard({

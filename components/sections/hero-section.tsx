@@ -100,14 +100,22 @@ export function HeroSection() {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            {serviceSummaries.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-base-border bg-brand-soft px-4 py-2 text-sm font-medium text-brand"
-              >
-                {item}
-              </span>
-            ))}
+            {serviceSummaries.map((item, index) => {
+              const colors = [
+                "bg-accent-sky border-accent-sky/50 text-brand",
+                "bg-accent-peach border-accent-peach/50 text-brand-dark",
+                "bg-accent-lime border-accent-lime/50 text-brand",
+                "bg-accent-pink border-accent-pink/50 text-brand-dark",
+              ];
+              return (
+                <span
+                  key={item}
+                  className={`rounded-full border px-4 py-2 text-sm font-medium ${colors[index % colors.length]}`}
+                >
+                  {item}
+                </span>
+              );
+            })}
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

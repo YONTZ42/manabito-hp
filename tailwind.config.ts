@@ -10,14 +10,19 @@ export default {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#2E6F67",
-          soft: "#D9ECE8",
+          DEFAULT: "#2774BA",
+          soft: "#D7E8F7",
+          dark: "#1E5A8F",
         },
         accent: {
           yellow: "#F2C66D",
+          orange: "#F5A962",
           peach: "#F6D7C3",
           sky: "#D7EBF7",
           lime: "#E5F0CF",
+          pink: "#F7D7E8",
+          coral: "#FF7F6E",
+          mint: "#7ED6B8",
         },
         base: {
           bg: "#FBF8F1",
@@ -42,7 +47,7 @@ export default {
       },
       backgroundImage: {
         "hero-grid":
-          "radial-gradient(circle at 1px 1px, rgba(46,111,103,0.08) 1px, transparent 0)",
+          "radial-gradient(circle at 1px 1px, rgba(39,116,186,0.08) 1px, transparent 0)",
       },
       backgroundSize: {
         "hero-grid": "24px 24px",
