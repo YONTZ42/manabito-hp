@@ -5,13 +5,13 @@ import { Container } from "@/components/ui/container";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function AnimatedElement({ 
-  children, 
-  delay = 0, 
-  className = "" 
-}: { 
-  children: React.ReactNode; 
-  delay?: number; 
+function AnimatedElement({
+  children,
+  delay = 0,
+  className = ""
+}: {
+  children: React.ReactNode;
+  delay?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,9 +38,8 @@ function AnimatedElement({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      } ${className}`}
+      className={`transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        } ${className}`}
     >
       {children}
     </div>
@@ -65,7 +64,7 @@ export function AchievementsSection() {
 
         {/* Main Profile Card */}
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:items-start">
-          
+
           {/* Photo Section - Left */}
           <AnimatedElement delay={200} className="flex flex-col items-center lg:sticky lg:top-24">
             {/* Photo with decoration */}
@@ -108,7 +107,7 @@ export function AchievementsSection() {
 
           {/* Story Section - Right */}
           <div className="flex flex-col gap-6">
-            
+
             {/* Quote */}
             <AnimatedElement delay={300}>
               <blockquote className="relative rounded-2xl bg-brand-soft/30 p-6 md:p-8">
@@ -177,10 +176,10 @@ export function AchievementsSection() {
             {/* Vision */}
             <AnimatedElement delay={800}>
               <div className="rounded-2xl bg-brand p-6 text-center text-white md:p-8">
-                <p className="text-lg font-bold leading-relaxed md:text-xl">
+                <p className="text-lg text-white font-bold leading-relaxed md:text-xl">
                   街全体をキャンパスに。
                 </p>
-                <p className="mt-2 text-base leading-relaxed opacity-90">
+                <p className="mt-2 text-base text-white/90 leading-relaxed opacity-90">
                   「やりたい」が、街の「おもしろい」に変わる。<br />
                   その社会の変革こそが、次世代への本当の教育。
                 </p>
