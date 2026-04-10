@@ -13,8 +13,8 @@ export function ContactSection() {
     <>
       <section id="contact" className="relative overflow-hidden bg-white py-16 md:py-24">
         {/* Background decorations */}
-        <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-accent-sky/40 blur-3xl" />
-        <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-accent-peach/40 blur-3xl" />
+        <div className="absolute -left-10 top-10 h-48 w-48 rounded-full bg-brand-soft/50 blur-3xl" />
+        <div className="absolute -right-10 bottom-10 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
         
         <Container className="relative">
           <div className="rounded-[36px] bg-white border border-brand from-brand to-brand px-6 py-10 text-main shadow-soft md:px-10 md:py-14">

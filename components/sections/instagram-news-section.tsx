@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-base-border bg-white/60 p-8 text-center backdrop-blur-sm">
-      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-sky/20">
+      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-soft">
         {icon}
       </div>
       <h4 className="font-heading text-lg font-bold text-text-main">{title}</h4>
@@ -26,10 +26,9 @@ function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode 
 export function InstagramNewsSection() {
   return (
     <section id="updates" className="relative overflow-hidden bg-base-bg py-16 md:py-24">
-      {/* Colorful background decorations */}
-      <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-accent-yellow/20 blur-3xl" />
-      <div className="absolute -left-20 top-1/2 h-56 w-56 rounded-full bg-accent-pink/25 blur-3xl" />
-      <div className="absolute right-1/4 bottom-0 h-48 w-48 rounded-full bg-accent-sky/30 blur-3xl" />
+      {/* Background decorations */}
+      <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-brand-soft/40 blur-3xl" />
+      <div className="absolute -left-20 top-1/2 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
       
       <Container className="relative">
         <SectionHeading

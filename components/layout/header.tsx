@@ -99,11 +99,11 @@ export function Header() {
               />
             </div>
 
-            <div className="min-w-0">
-              <p className="truncate font-heading text-base font-bold text-text-main md:text-lg">
+            <div className="min-w-0 shrink-0">
+              <p className="whitespace-nowrap font-heading text-sm font-bold text-text-main sm:text-base md:text-lg">
                 合同会社マナビト
               </p>
-              <p className="truncate text-xs text-text-sub">
+              <p className="whitespace-nowrap text-[10px] text-text-sub sm:text-xs">
                 社会を、大きな教室に。
               </p>
             </div>
@@ -121,9 +121,11 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 md:gap-3">
-            <Button href="#contact" size="sm" className="hidden sm:inline-flex">
-              お問い合わせ
+          <div className="flex shrink-0 items-center gap-2 md:gap-3">
+            <Button href="#contact" size="sm" className="inline-flex px-2.5" aria-label="お問い合わせ">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
             </Button>
 
             <button
