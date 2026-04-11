@@ -206,9 +206,12 @@ export function AchievementsSection() {
                 <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-base">
                   子どもが輝ける街は、大人も輝ける街。<br />
                   マナビトは、その架け橋になります。
+
                 </p>
               </div>
-            </AnimatedElement>
+
+            </div>
+          </AnimatedElement>
 
             {/* Activities */}
             <AnimatedElement delay={900}>
