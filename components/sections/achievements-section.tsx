@@ -58,7 +58,7 @@ export function AchievementsSection() {
         <AnimatedElement className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">About</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
-            なぜマナビトに<span className="relative inline-block text-brand"><span className="absolute bottom-1 left-0 -z-10 h-3 w-full bg-accent-yellow/50" />任せられる</span>のか
+            なぜマナビトに<mark className="rounded bg-accent-yellow/50 px-1 text-brand">任せられる</mark>のか
           </h2>
         </AnimatedElement>
 
@@ -125,10 +125,7 @@ export function AchievementsSection() {
                 </svg>
                 <p className="relative text-xl font-bold leading-relaxed text-text-main md:text-2xl">
                   「教室の中だけで、<br className="hidden sm:block" />
-                  <span className="relative inline-block text-brand">
-                    <span className="absolute bottom-0 left-0 -z-10 h-3 w-full bg-accent-yellow" />
-                    教育は完結しない
-                  </span>」
+                  <mark className="rounded bg-accent-yellow/60 px-1 text-brand">教育は完結しない</mark>」
                 </p>
               </blockquote>
             </AnimatedElement>
@@ -138,10 +135,16 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">1</span>
-                  教員時代の気づき
+                  きっかけ
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  <span className="font-semibold text-text-main">5年間の高校教員生活</span>で感じた違和感。教室の中だけで子どもたちの可能性は<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />本当に開花するのか</span>？その問いが、私を次のステージへ導きました。
+                  <span className="font-semibold text-text-main">5年間の高校教員生活。</span>テストの点数や校則といった「狭い世界の物差し」だけで、子どもたちの可能性を測ることに限界を感じました。
+                </p>
+                <p className="mt-2 rounded-lg bg-brand-soft/30 px-3 py-2 text-base font-semibold leading-relaxed text-text-main">
+                  「卒業後の社会そのものが、挑戦を応援する場所でなければ、教育の責任は果たせない。」
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-text-sub">
+                  その問いが、私を学校の外へと突き動かしました。
                 </p>
               </div>
             </AnimatedElement>
@@ -150,10 +153,13 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">2</span>
-                  NPO法人での実践
+                  街が「第二の教室」に変わる瞬間
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  <span className="font-bold text-brand">NPO法人 土浦わかもののまちプロジェクト</span>を立ち上げ、代表理事として<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />若者と行政をつなぐ</span>活動を開始。子どもたちが<span className="font-semibold text-text-main">街の主役</span>になれる場をつくり続けています。
+                  学校を飛び出し、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">若者と行政をつなぐNPOの代表</mark>として、街づくりに身を投じました。
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-text-sub">
+                  教科書にはない問いに挑み、街の課題を自分事として語り出す子どもたちの眼差しは、驚くほど真剣でした。教室では発揮されなかった個性が、社会というリアルに触れた瞬間、<span className="font-bold text-brand">爆発的な熱量</span>に変わるのを目の当たりにしました。
                 </p>
               </div>
             </AnimatedElement>
@@ -162,10 +168,13 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">3</span>
-                  確信へ
+                  確信
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  若者の声が行政に届き、<span className="font-semibold text-text-main">街が変わる瞬間</span>を何度も目にしてきました。子どもが輝ける街には、<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />学びと社会をつなぐ伴走者</span>が必要だと確信しました。
+                  若者の声が行政に届き、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">実際に街が変わる。</mark>その成功体験が、子どもたちの自己肯定感を劇的に高めることを確信しました。
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-text-sub">
+                  一方で、行政・教育・地域にはそれぞれの「言葉」があり、想いがすれ違う場面も見てきました。今、求められているのは、それらを翻訳し、一つのチームにする<span className="font-semibold text-text-main">「伴走者」</span>です。
                 </p>
               </div>
             </AnimatedElement>
@@ -177,7 +186,10 @@ export function AchievementsSection() {
                   マナビト創業
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  教育現場とNPO活動、両方の経験を活かし<span className="font-bold text-brand">『マナビト』</span>を創業。<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />行政・企業・学校・地域</span>をつなぎ、若者と大人が共に学び合う<span className="font-semibold text-text-main">街づくり</span>を支援しています。
+                  教員の<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「人を育てる視点」</mark>と、NPOの<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「街を動かす実行力」</mark>。その両輪で<span className="font-bold text-brand">『マナビト』</span>を創業しました。
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-text-sub">
+                  行政には次世代の視点を、若者には社会を変える舞台を。大人も子どもも、立場を超えて<span className="font-semibold text-text-main">「学び合い、企てる」</span>。そんな大きな教室のような社会を、皆さまと共に創り上げます。
                 </p>
               </div>
             </AnimatedElement>

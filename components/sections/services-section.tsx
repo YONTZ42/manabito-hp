@@ -17,7 +17,7 @@ export function ServicesSection() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Solutions</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
-            その悩み、<span className="relative inline-block text-brand"><span className="absolute bottom-1 left-0 h-3 w-full bg-accent-yellow/50 -z-10" />マナビトが解決</span>します
+            その悩み、<mark className="rounded bg-accent-yellow/50 px-1 text-brand">マナビトが解決</mark>します
           </h2>
           <p className="mt-4 text-base leading-relaxed text-text-sub">
             <span className="font-semibold text-text-main">企画から運営まで、ワンストップで伴走。</span><br className="hidden sm:block" />

@@ -17,7 +17,7 @@ export function ConcernsSection() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Concerns</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
-            こんな<span className="relative inline-block text-brand"><span className="absolute bottom-1 left-0 h-3 w-full bg-accent-yellow/50 -z-10" />お悩み</span>はありませんか？
+            こんな<mark className="rounded bg-accent-yellow/50 px-1 text-brand">お悩み</mark>はありませんか？
           </h2>
           <p className="mt-4 text-base leading-relaxed text-text-sub">
             「やりたいことはある。でも、<span className="font-semibold text-text-main">時間も人手も足りない</span>」<br className="hidden sm:block" />
