@@ -209,8 +209,6 @@ export function AchievementsSection() {
 
                 </p>
               </div>
-
-            </div>
           </AnimatedElement>
 
             {/* Activities */}
