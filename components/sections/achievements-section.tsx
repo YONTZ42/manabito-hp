@@ -174,17 +174,27 @@ export function AchievementsSection() {
             </AnimatedElement>
 
             {/* Vision */}
-            <AnimatedElement delay={800}>
-              <div className="rounded-2xl bg-brand p-6 text-center text-white md:p-8">
-                <p className="text-lg text-white font-bold leading-relaxed md:text-xl">
-                  街全体をキャンパスに。
-                </p>
-                <p className="mt-2 text-base text-white/90 leading-relaxed opacity-90">
+          <AnimatedElement delay={800}>
+            {/* 1. 影を濃く(shadow-strong)し、relativeを追加して内部の絶対配置を安定させる */}
+            <div className="relative rounded-[32px] bg-brand p-8 text-center text-white shadow-strong md:p-10">
+              
+              {/* 2. 装飾用の下線。親が relative なので、これで正しく文字の下に配置されます */}
+              <div className="flex flex-col items-center">
+                <div className="relative inline-block">
+                  <p className="text-xl font-bold leading-relaxed text-white md:text-2xl">
+                    " 社会を、大きな教室に。"
+                  </p>
+                  <span className="absolute bottom-1 left-0 -z-10 h-3 w-full bg-accent-yellow/30" />
+                </div>
+
+                <p className="mt-6 text-base leading-relaxed text-white/90 md:text-lg">
                   「やりたい」が、街の「おもしろい」に変わる。<br />
                   その社会の変革こそが、次世代への本当の教育。
                 </p>
               </div>
-            </AnimatedElement>
+
+            </div>
+          </AnimatedElement>
 
             {/* Activities */}
             <AnimatedElement delay={900}>
