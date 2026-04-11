@@ -17,10 +17,10 @@ export function ConcernsSection() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Concerns</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
-            こんな<mark className="rounded bg-accent-yellow/50 px-1 text-brand">お悩み</mark>はありませんか？
+            こんな<span className="underline-accent">お悩み</span>はありませんか？
           </h2>
           <p className="mt-4 text-base leading-relaxed text-text-sub">
-            「やりたいことはある。でも、<span className="font-semibold text-text-main">時間も人手も足りない</span>」<br className="hidden sm:block" />
+            「やりたいことはある。でも、<span className="highlight-marker font-semibold">時間も人手も足りない</span>」<br className="hidden sm:block" />
             そんな現場の声に、私たちは向き合ってきました。
           </p>
         </div>
@@ -40,7 +40,7 @@ export function ConcernsSection() {
         {/* Transition message */}
         <div className="mt-12 text-center">
           <p className="text-lg font-semibold text-text-main">
-            一つでも当てはまるなら、<span className="text-brand">マナビト</span>がお力になれます。
+            一つでも当てはまるなら、<span className="underline-brand text-brand">マナビト</span>がお力になれます。
           </p>
           <svg className="mx-auto mt-4 h-8 w-8 animate-bounce text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />

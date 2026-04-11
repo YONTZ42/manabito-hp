@@ -58,7 +58,7 @@ export function AchievementsSection() {
         <AnimatedElement className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">About</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
-            なぜマナビトに<mark className="rounded bg-accent-yellow/50 px-1 text-brand">任せられる</mark>のか
+            なぜマナビトに<span className="key-phrase">任せられる</span>のか
           </h2>
         </AnimatedElement>
 
@@ -125,7 +125,7 @@ export function AchievementsSection() {
                 </svg>
                 <p className="relative text-xl font-bold leading-relaxed text-text-main md:text-2xl">
                   「教室の中だけで、<br className="hidden sm:block" />
-                  <mark className="rounded bg-accent-yellow/60 px-1 text-brand">教育は完結しない</mark>」
+                  <span className="key-phrase">教育は完結しない</span>」
                 </p>
               </blockquote>
             </AnimatedElement>
@@ -138,7 +138,7 @@ export function AchievementsSection() {
                   きっかけ
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  <span className="font-semibold text-text-main">5年間の高校教員生活。</span>テストの点数や校則といった「狭い世界の物差し」だけで、子どもたちの可能性を測ることに限界を感じました。
+                  <span className="underline-brand font-semibold text-text-main">5年間の高校教員生活。</span>テストの点数や校則といった「狭い世界の物差し」だけで、子どもたちの可能性を測ることに限界を感じました。
                 </p>
                 <p className="mt-2 rounded-lg bg-brand-soft/30 px-3 py-2 text-base font-semibold leading-relaxed text-text-main">
                   「卒業後の社会そのものが、挑戦を応援する場所でなければ、教育の責任は果たせない。」
@@ -156,10 +156,10 @@ export function AchievementsSection() {
                   街が「第二の教室」に変わる瞬間
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  学校を飛び出し、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">若者と行政をつなぐNPOの代表</mark>として、街���くりに身を投じました。
+                  学校を飛び出し、<span className="highlight-box">若者と行政をつなぐNPOの代表</span>として、街づくりに身を投じました。
                 </p>
                 <p className="mt-2 text-base leading-relaxed text-text-sub">
-                  教科書にはない問いに挑み、街の課題を自分事として語り出す子どもたちの眼差しは、驚くほど真剣でした。教室では発揮されなかった個性が、社会というリアルに触れた瞬間、<span className="font-bold text-brand">爆発的な熱量</span>に変わるのを目の当たりにしました。
+                  教科書にはない問いに挑み、街の課題を自分事として語り出す子どもたちの眼差しは、驚くほど真剣でした。教室では発揮されなかった個性が、社会というリアルに触れた瞬間、<span className="underline-brand font-bold text-brand">爆発的な熱量</span>に変わるのを目の当たりにしました。
                 </p>
               </div>
             </AnimatedElement>
@@ -171,10 +171,10 @@ export function AchievementsSection() {
                   確信
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  若者の声が行政に届き、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">実際に街が変わる。</mark>その成功体験が、子どもたちの自己肯定感を劇的に高めることを確信しました。
+                  若者の声が行政に届き、<span className="highlight-marker font-semibold">実際に街が変わる。</span>その成功体験が、子どもたちの自己肯定感を劇的に高めることを確信しました。
                 </p>
                 <p className="mt-2 text-base leading-relaxed text-text-sub">
-                  一方で、行政・教育・地域にはそれぞれの「言葉」があり、想いがすれ違う場面も見てきました。今、求められているのは、それらを翻訳し、一つのチームにする<span className="font-semibold text-text-main">「伴走者」</span>です。
+                  一方で、行政・教育・地域にはそれぞれの「言葉」があり、想いがすれ違う場面も見てきました。今、求められているのは、それらを翻訳し、一つのチームにする<span className="underline-accent font-semibold text-text-main">「伴走者」</span>です。
                 </p>
               </div>
             </AnimatedElement>
@@ -186,11 +186,11 @@ export function AchievementsSection() {
                   マナビト創業
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  教員の<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「人を育てる視点」</mark>と、NPOの<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「街を動かす実行力」</mark>。その両輪で<span className="font-bold text-brand">『マナビト』</span>を創業しました。
+                  教員の<span className="highlight-box">「人を育てる視点」</span>と、NPOの<span className="highlight-box">「街を動かす実行力」</span>。その両輪で<span className="key-phrase">『マナビト』</span>を創業しました。
                 </p>
                 <p className="mt-2 text-base leading-relaxed text-text-sub">
                   行政には若者の新しい視点を、若者には社会に貢献する機会を。
-                  大人も子どもも立場を超えて<span className="font-semibold text-text-main">「共に学び、高め合う」</span>。
+                  大人も子どもも立場を超えて<span className="underline-gradient font-semibold text-text-main">「共に学び、高め合う」</span>。
                   学びが街の力となり、街が人を育む。そんな心地よい循環が生まれる大きな教室のような社会を、皆さまと共に築いていきます。
                 </p>
               </div>

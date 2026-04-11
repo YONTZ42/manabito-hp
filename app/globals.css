@@ -108,6 +108,78 @@ main {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* ========================================
+     テキストハイライト・アクセントスタイル
+     ======================================== */
+  
+  /* 下線アクセント - ブランドカラー（主要な訴求ポイント用） */
+  .underline-brand {
+    @apply relative inline;
+    background-image: linear-gradient(to right, #2774BA, #2774BA);
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+  }
+
+  /* 下線アクセント - アクセントイエロー（注目喚起用） */
+  .underline-accent {
+    @apply relative inline;
+    background-image: linear-gradient(to right, #F5C84C, #F5C84C);
+    background-size: 100% 4px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+  }
+
+  /* 下線アクセント - グラデーション（特別な強調用） */
+  .underline-gradient {
+    @apply relative inline;
+    background-image: linear-gradient(90deg, #2774BA, #4A9AD4);
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+  }
+
+  /* ソフトハイライト - 読みやすい淡い背景（本文内の強調用） */
+  .highlight-soft {
+    @apply rounded px-1.5 py-0.5;
+    background-color: rgba(215, 232, 247, 0.5);
+  }
+
+  /* ボックスハイライト - 枠線付き（キーワード強調用） */
+  .highlight-box {
+    @apply rounded border-b-2 border-brand/40 px-1 font-semibold;
+    color: #243533;
+  }
+
+  /* マーカー風ハイライト - 手書き感（親しみやすさ演出用） */
+  .highlight-marker {
+    @apply relative inline px-0.5;
+    background: linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(245, 200, 76, 0.45) 45%,
+      rgba(245, 200, 76, 0.45) 85%,
+      transparent 85%
+    );
+  }
+
+  /* ブランドテキスト - シンプルな色強調 */
+  .text-accent-brand {
+    @apply font-semibold text-brand;
+  }
+
+  /* キーフレーズ - 大胆な強調（見出し内のキーワード用） */
+  .key-phrase {
+    @apply relative inline-block font-bold text-brand;
+    background-image: linear-gradient(to right, #F5C84C, #F5C84C);
+    background-size: 100% 6px;
+    background-position: 0 95%;
+    background-repeat: no-repeat;
+  }
 }
 
 /* 背景装飾 */
