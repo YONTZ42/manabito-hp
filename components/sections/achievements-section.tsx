@@ -156,7 +156,7 @@ export function AchievementsSection() {
                   街が「第二の教室」に変わる瞬間
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  学校を飛び出し、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">若者と行政をつなぐNPOの代表</mark>として、街づくりに身を投じました。
+                  学校を飛び出し、<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">若者と行政をつなぐNPOの代表</mark>として、街���くりに身を投じました。
                 </p>
                 <p className="mt-2 text-base leading-relaxed text-text-sub">
                   教科書にはない問いに挑み、街の課題を自分事として語り出す子どもたちの眼差しは、驚くほど真剣でした。教室では発揮されなかった個性が、社会というリアルに触れた瞬間、<span className="font-bold text-brand">爆発的な熱量</span>に変わるのを目の当たりにしました。
@@ -189,18 +189,21 @@ export function AchievementsSection() {
                   教員の<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「人を育てる視点」</mark>と、NPOの<mark className="rounded bg-accent-yellow/60 px-1 text-text-main">「街を動かす実行力」</mark>。その両輪で<span className="font-bold text-brand">『マナビト』</span>を創業しました。
                 </p>
                 <p className="mt-2 text-base leading-relaxed text-text-sub">
-                  行政には次世代の視点を、若者には社会を変える舞台を。大人も子どもも、立場を超えて<span className="font-semibold text-text-main">「学び合い、企てる」</span>。そんな大きな教室のような社会を、皆さまと共に創り上げます。
+                  行政には若者の新しい視点を、若者には社会に貢献する機会を。
+                  大人も子どもも立場を超えて<span className="font-semibold text-text-main">「共に学び、高め合う」</span>。
+                  学びが街の力となり、街が人を育む。そんな心地よい循環が生まれる大きな教室のような社会を、皆さまと共に築いていきます。
                 </p>
               </div>
             </AnimatedElement>
 
             {/* Vision */}
             <AnimatedElement delay={800}>
-              <div className="rounded-2xl bg-brand p-6 text-center text-white md:p-8">
-                <p className="text-lg text-white font-bold leading-relaxed md:text-xl">
-                  若者と行政をつなぎ、<br className="sm:hidden" />街をもっとおもしろく。
+              <div className="rounded-2xl bg-brand p-8 text-center text-white md:p-12">
+                <p className="font-heading text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl md:text-4xl">
+                  社会を、大きな教室に。
                 </p>
-                <p className="mt-2 text-base text-white/90 leading-relaxed opacity-90">
+                <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-white/40" />
+                <p className="mt-4 text-sm leading-relaxed text-white/80 sm:text-base">
                   子どもが輝ける街は、大人も輝ける街。<br />
                   マナビトは、その架け橋になります。
                 </p>
