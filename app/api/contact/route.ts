@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
     // Send email using Resend
     const { error } = await resend.emails.send({
-      from: "form@manabito.info",
+      from: "form@send.manabito.info",
       to: process.env.CONTACT_EMAIL || "contact@example.com",
       replyTo: email,
       subject: `【マナビト】お問い合わせ: ${name}様より`,
