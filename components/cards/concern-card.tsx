@@ -15,7 +15,7 @@ function highlightText(text: string, highlightWords: string[] = []) {
   highlightWords.forEach((word) => {
     result = result.replace(
       word,
-      `<span class="relative inline-block font-bold text-brand"><span class="absolute bottom-0 left-0 h-2.5 w-full bg-accent-yellow -z-10"></span>${word}</span>`
+      `<mark class="rounded bg-accent-yellow/60 px-0.5 font-bold text-brand">${word}</mark>`
     );
   });
   return result;

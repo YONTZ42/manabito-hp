@@ -11,10 +11,11 @@ import { cn } from "@/lib/utils";
 const LOGO_IMAGE_PATH = "/images/MANABITO_LOGO.png";
 
 const navItems = [
-  { label: "理念", href: "#top" },
+  { label: "TOP", href: "#top" },
   { label: "お悩み", href: "#concerns" },
   { label: "サービス", href: "#services" },
-  { label: "実績", href: "#achievements" },
+  { label: "サービス詳細", href: "#service-details" },
+  { label: "代表紹介", href: "#achievements" },
   { label: "最新情報", href: "#updates" },
   { label: "お問い合わせ", href: "#contact" },
 ];
@@ -22,15 +23,6 @@ const navItems = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-    const navItems = [
-    { label: "理念", href: "#top" },
-    { label: "お悩み", href: "#concerns" },
-    { label: "サービス", href: "#services" },
-    { label: "実績", href: "#achievements" },
-    { label: "最新情報", href: "#updates" },
-    { label: "お問い合わせ", href: "#contact" },
-    ];
 
     
   useEffect(() => {
@@ -80,7 +72,7 @@ export function Header() {
             className="group flex min-w-0 items-center gap-3"
             aria-label="合同会社マナビト トップへ戻る"
           >
-            <div className="relative h-11 w-11 shrink-0 overflow-hiddenshadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden shadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
               <Image
                 src={LOGO_IMAGE_PATH}
                 alt="マナビト ロゴ"
@@ -109,8 +101,8 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex" aria-label="グローバルナビゲーション">
-            {navItems.slice(1, 5).map((item) => (
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="グローバルナビゲーション">
+            {navItems.slice(1, 6).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
