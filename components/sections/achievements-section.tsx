@@ -88,20 +88,29 @@ export function AchievementsSection() {
               <h3 className="mt-1 font-heading text-2xl font-bold text-text-main md:text-3xl">
                 酒井 慶太
               </h3>
-              <p className="mt-2 text-sm text-text-sub">合同会社マナビト 代表社員</p>
+              <div className="mt-3 space-y-1 text-sm text-text-sub">
+                <p>合同会社マナビト 代表社員</p>
+                <p className="font-medium text-text-main">NPO法人 土浦わかもののまちプロジェクト<br />代表理事</p>
+              </div>
             </div>
 
             {/* Expertise Tags */}
             <div className="mt-5 flex flex-wrap justify-center gap-2">
-              <Chip variant="brand">地域連携</Chip>
-              <Chip variant="brand">視察研修</Chip>
-              <Chip variant="brand">教育設計</Chip>
+              <Chip variant="brand">街づくり</Chip>
+              <Chip variant="brand">行政連携</Chip>
+              <Chip variant="brand">若者支援</Chip>
             </div>
 
-            {/* Trust Indicator */}
-            <AnimatedElement delay={600} className="mt-6 rounded-xl bg-brand-soft/50 px-5 py-3 text-center">
-              <p className="text-xs font-medium text-brand">教育現場での経験</p>
-              <p className="mt-1 font-heading text-2xl font-bold text-brand-dark">5<span className="text-base">年以上</span></p>
+            {/* Trust Indicators */}
+            <AnimatedElement delay={600} className="mt-6 flex gap-3">
+              <div className="flex-1 rounded-xl bg-brand-soft/50 px-4 py-3 text-center">
+                <p className="text-xs font-medium text-brand">教育現場</p>
+                <p className="mt-1 font-heading text-xl font-bold text-brand-dark">5<span className="text-xs">年以上</span></p>
+              </div>
+              <div className="flex-1 rounded-xl bg-brand-soft/50 px-4 py-3 text-center">
+                <p className="text-xs font-medium text-brand">NPO代表</p>
+                <p className="mt-1 font-heading text-xl font-bold text-brand-dark">現職</p>
+              </div>
             </AnimatedElement>
           </AnimatedElement>
 
@@ -129,10 +138,10 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">1</span>
-                  きっかけ
+                  教員時代の気づき
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  その痛切な危機感が、私を<span className="font-semibold text-text-main">5年間の教員生活</span>から、<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />街という現場</span>へ駆り立てました。
+                  <span className="font-semibold text-text-main">5年間の高校教員生活</span>で感じた違和感。教室の中だけで子どもたちの可能性は<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />本当に開花するのか</span>？その問いが、私を次のステージへ導きました。
                 </p>
               </div>
             </AnimatedElement>
@@ -141,10 +150,10 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">2</span>
-                  課題意識
+                  NPO法人での実践
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  <span className="font-semibold text-text-main">少子高齢化、地域の衰退</span>、そして正解のないこれからの日本。疲弊していく社会を前に、教室で知識を教えるだけでは、<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />子供たちの未来に責任を持てない</span>と感じました。
+                  <span className="font-bold text-brand">NPO法人 土浦わかもののまちプロジェクト</span>を立ち上げ、代表理事として<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />若者と行政をつなぐ</span>活動を開始。子どもたちが<span className="font-semibold text-text-main">街の主役</span>になれる場をつくり続けています。
                 </p>
               </div>
             </AnimatedElement>
@@ -153,10 +162,10 @@ export function AchievementsSection() {
               <div className="rounded-2xl border border-base-border bg-white p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">3</span>
-                  確信
+                  確信へ
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  最先端の学びと、地域に根ざした教育。その両方の現場で、生徒の可能性が「社会」と接続した瞬間に放たれる<span className="font-bold text-brand">爆発的な熱狂</span>を、私は誰よりも見てきました。
+                  若者の声が行政に届き、<span className="font-semibold text-text-main">街が変わる瞬間</span>を何度も目にしてきました。子どもが輝ける街には、<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />学びと社会をつなぐ伴走者</span>が必要だと確信しました。
                 </p>
               </div>
             </AnimatedElement>
@@ -165,10 +174,10 @@ export function AchievementsSection() {
               <div className="rounded-2xl border-2 border-brand/20 bg-brand-soft/20 p-6 shadow-soft">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-brand">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-xs text-white">4</span>
-                  だから、マナビトを立ち上げた
+                  マナビト創業
                 </h4>
                 <p className="mt-3 text-base leading-relaxed text-text-sub">
-                  学びと街を<span className="font-semibold text-text-main">シームレスにつなぐ伴走者</span>として<span className="font-bold text-brand">『マナビト』</span>を創業。現在は次世代の街づくりを担う団体の代表も務め、<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />行政と若者の間に立ち</span>、共に未来を企てる場をデザインしています。
+                  教育現場とNPO活動、両方の経験を活かし<span className="font-bold text-brand">『マナビト』</span>を創業。<span className="relative inline-block"><span className="absolute bottom-0 left-0 -z-10 h-2 w-full bg-accent-yellow/60" />行政・企業・学校・地域</span>をつなぎ、若者と大人が共に学び合う<span className="font-semibold text-text-main">街づくり</span>を支援しています。
                 </p>
               </div>
             </AnimatedElement>
@@ -177,11 +186,11 @@ export function AchievementsSection() {
             <AnimatedElement delay={800}>
               <div className="rounded-2xl bg-brand p-6 text-center text-white md:p-8">
                 <p className="text-lg text-white font-bold leading-relaxed md:text-xl">
-                  街全体をキャンパスに。
+                  若者と行政をつなぎ、<br className="sm:hidden" />街をもっとおもしろく。
                 </p>
                 <p className="mt-2 text-base text-white/90 leading-relaxed opacity-90">
-                  「やりたい」が、街の「おもしろい」に変わる。<br />
-                  その社会の変革こそが、次世代への本当の教育。
+                  子どもが輝ける街は、大人も輝ける街。<br />
+                  マナビトは、その架け橋になります。
                 </p>
               </div>
             </AnimatedElement>
@@ -194,27 +203,26 @@ export function AchievementsSection() {
                   <div className="flex items-center gap-2 rounded-lg bg-base-bg p-3">
                     <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand text-white">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
                       </svg>
                     </span>
-                    <span className="text-sm font-medium text-text-main">研修・学習設計</span>
+                    <span className="text-sm font-medium text-text-main">行政連携</span>
                   </div>
                   <div className="flex items-center gap-2 rounded-lg bg-base-bg p-3">
                     <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-muted text-white">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                       </svg>
                     </span>
-                    <span className="text-sm font-medium text-text-main">視察・企画調整</span>
+                    <span className="text-sm font-medium text-text-main">若者支援</span>
                   </div>
                   <div className="flex items-center gap-2 rounded-lg bg-base-bg p-3">
                     <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                       </svg>
                     </span>
-                    <span className="text-sm font-medium text-text-main">場づくり支援</span>
+                    <span className="text-sm font-medium text-text-main">街づくり</span>
                   </div>
                 </div>
               </div>
