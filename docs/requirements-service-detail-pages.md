@@ -21,10 +21,10 @@
 
 ## ルーティング要件
 
-- Next.js App Router のルールに従い、`app/services/[slug]/page.tsx` を利用する
-- 4件の詳細ページは `generateStaticParams` で静的生成する
-- 無効な `slug` は `notFound()` で処理する
-- 遷移導線は `next/link` ベースの既存 `Button` を使う
+- Next.js App Router のルールに従い、`app/services/<service-name>/page.tsx` の個別ページとして配置する
+- 各詳細ページは明示的な静的ルートを持ち、一覧から別ページへ遷移する構成にする
+- ローディング UI は `app/services/loading.tsx` で共通化する
+- 遷移導線は既存 `Button` を使い、サービス一覧から個別ページへ移動できるようにする
 
 ## UI要件
 

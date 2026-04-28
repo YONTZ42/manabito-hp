@@ -1,31 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Instagram Feed Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`InstagramNewsSection` fetches the latest 3 posts from the Instagram Graph API when the following environment variables are set in `.env.local`:
 
-## Learn More
+```env
+INSTAGRAM_ACCESS_TOKEN=your_long_lived_token
+INSTAGRAM_USER_ID=your_instagram_business_account_id
+INSTAGRAM_PROFILE_URL=https://www.instagram.com/your_account/
+INSTAGRAM_GRAPH_API_VERSION=v23.0
+```
 
-To learn more about Next.js, take a look at the following resources:
+If these values are missing or the API request fails, the section falls back to local dummy data so the page still renders.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
+
+- The Instagram Graph API requires a professional Instagram account connected to a Meta app.
+- The feed is revalidated hourly on the server.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 

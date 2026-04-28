@@ -101,3 +101,13 @@ export const serviceDetails: ServiceDetail[] = [
 export function getServiceDetailBySlug(slug: string) {
   return serviceDetails.find((detail) => detail.slug === slug);
 }
+
+export function requireServiceDetail(slug: string): ServiceDetail {
+  const detail = getServiceDetailBySlug(slug);
+
+  if (!detail) {
+    throw new Error(`Missing service detail: ${slug}`);
+  }
+
+  return detail;
+}

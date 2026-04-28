@@ -1,5 +1,7 @@
+import { InstagramPostCard } from "@/components/cards/instagram-post-card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { getInstagramFeed } from "@/lib/instagram";
 
 function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode }) {
   return (
@@ -23,7 +25,9 @@ function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode 
   );
 }
 
-export function InstagramNewsSection() {
+export async function InstagramNewsSection() {
+  const { posts, profileUrl, isFallback } = await getInstagramFeed();
+
   return (
     <section id="updates" className="relative overflow-hidden bg-base-bg py-16 md:py-24">
       {/* Background decorations */}
@@ -34,27 +38,45 @@ export function InstagramNewsSection() {
         <SectionHeading
           eyebrow="Updates"
           title="Instagram と最新情報"
-          description="活動の様子やお知らせを通して、マナビトの今を伝えます。Instagramや各種メディアをまとめる予定です！"
+          description="活動の様子やお知らせを通して、マナビトの今を伝えます。Instagramの最新投稿と、今後追加するお知らせをこちらにまとめます。"
           descriptionColor="rgb(36, 53, 51)"
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div>
-            <div className="mb-4">
+            <div className="mb-4 flex items-center justify-between gap-4">
               <h3 className="font-heading text-2xl font-bold text-text-main">
                 Instagram
               </h3>
+              <a
+                href={profileUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-brand/20 bg-white px-4 py-2 text-sm font-medium text-brand transition-colors hover:bg-brand-soft/50"
+              >
+                プロフィールを見る
+              </a>
             </div>
-            <ComingSoonCard
-              title="Instagram投稿"
-              icon={
-                <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="18" cy="6" r="1.5" fill="currentColor" />
-                </svg>
-              }
-            />
+            <div className="grid gap-4 md:grid-cols-3">
+              {posts.map((post, index) => (
+                <InstagramPostCard
+                  key={post.id}
+                  title={post.title}
+                  date={post.date}
+                  caption={post.caption}
+                  href={post.permalink}
+                  imageUrl={post.imageUrl}
+                  mediaType={post.mediaType}
+                  colorIndex={index}
+                />
+              ))}
+            </div>
+            {isFallback ? (
+              <p className="mt-4 text-sm leading-6 text-text-sub">
+                <code>INSTAGRAM_ACCESS_TOKEN</code> と{" "}
+                <code>INSTAGRAM_USER_ID</code> が未設定のため、現在はダミー投稿を表示しています。
+              </p>
+            ) : null}
           </div>
 
           <div>
