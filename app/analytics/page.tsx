@@ -3,38 +3,43 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { getGa4DashboardData } from "@/lib/ga4";
 
 export const metadata: Metadata = {
   title: "Analytics",
-  description:
-    "Vercel Analytics の導入状況と、デプロイ後の確認手順をまとめたページです。",
+  description: "Google Analytics 4 の主要指標を確認できる管理画面です。",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
-const checkpoints = [
-  {
-    title: "導入状況",
-    description:
-      "このサイト全体に Vercel Analytics を組み込み、App Router のページ遷移を自動で計測する構成にしています。",
-  },
-  {
-    title: "データ反映条件",
-    description:
-      "Vercel へデプロイした URL に実際のアクセスが発生すると、ページビューが収集されます。ローカル環境の確認だけでは集計されません。",
-  },
-  {
-    title: "確認場所",
-    description:
-      "集計結果は Vercel Dashboard の Analytics 画面で確認します。数値が出ない場合は 30 秒ほど待ち、広告ブロッカーも確認してください。",
-  },
-];
+export const dynamic = "force-dynamic";
 
-const steps = [
-  "Vercel にデプロイする",
-  "公開 URL を開いて複数ページを移動する",
-  "30 秒ほど待って Vercel Dashboard の Analytics を確認する",
-];
+function MiniBarChart({ values }: { values: number[] }) {
+  const maxValue = Math.max(...values, 1);
 
-export default function AnalyticsPage() {
+  return (
+    <div className="mt-6 flex h-44 items-end gap-2 rounded-[24px] border border-base-border bg-base-bg/70 p-4">
+      {values.map((value, index) => {
+        const height = Math.max((value / maxValue) * 100, 6);
+
+        return (
+          <div key={`${index}-${value}`} className="flex flex-1 flex-col items-center gap-2">
+            <div
+              className="w-full rounded-full bg-brand/85 transition-opacity hover:opacity-80"
+              style={{ height: `${height}%` }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default async function AnalyticsPage() {
+  const dashboard = await getGa4DashboardData();
+
   return (
     <>
       <main className="relative overflow-hidden bg-base-bg">
@@ -45,29 +50,27 @@ export default function AnalyticsPage() {
           <Container className="relative py-20 md:py-28">
             <div className="max-w-4xl">
               <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
-                Vercel Analytics
+                Google Analytics 4
               </p>
               <h1 className="mt-4 text-balance text-4xl font-black md:text-6xl">
-                デプロイ後のアクセス計測を、
-                <span className="key-phrase">このサイト全体で有効化</span>
-                しました。
+                サイトの閲覧状況を、
+                <span className="key-phrase">この画面で直接確認</span>
+                できます。
               </h1>
               <p className="mt-6 max-w-3xl text-base md:text-lg">
-                `@vercel/analytics` をレイアウトに組み込み、Vercel 上で公開したページの閲覧データを自動収集する構成です。
-                実際のレポートはこのページ内ではなく、Vercel Dashboard の Analytics 画面で確認します。
+                GA4 のタグは `@next/third-parties/google` で全ページに組み込み、管理画面は
+                Google Analytics Data API から主要指標を取得して表示します。
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/" size="md">
                   トップページへ戻る
                 </Button>
-                <Button
-                  href="https://vercel.com/dashboard"
-                  variant="secondary"
-                  size="md"
-                >
-                  Vercel Dashboard を開く
-                </Button>
+                {dashboard.status === "ready" ? (
+                  <div className="inline-flex items-center rounded-full border border-brand/20 bg-white/80 px-4 py-2 text-sm text-text-main">
+                    表示範囲: {dashboard.rangeLabel}
+                  </div>
+                ) : null}
               </div>
             </div>
           </Container>
@@ -75,86 +78,185 @@ export default function AnalyticsPage() {
 
         <section className="section-padding">
           <Container>
-            <div className="grid gap-6 lg:grid-cols-3">
-              {checkpoints.map((item) => (
-                <article key={item.title} className="surface-card p-6 md:p-8">
-                  <p className="font-latin text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-                    Check
-                  </p>
-                  <h2 className="mt-3 text-2xl font-bold">{item.title}</h2>
-                  <p className="mt-4 text-sm md:text-base">{item.description}</p>
-                </article>
-              ))}
-            </div>
+            {dashboard.status === "ready" ? (
+              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                {dashboard.summary.map((item) => (
+                  <article key={item.label} className="surface-card p-6 md:p-8">
+                    <p className="font-latin text-xs font-semibold uppercase tracking-[0.28em] text-brand">
+                      Metric
+                    </p>
+                    <h2 className="mt-3 text-lg font-bold">{item.label}</h2>
+                    <p className="mt-5 font-latin text-4xl font-semibold text-text-main">
+                      {item.value}
+                    </p>
+                    <p className="mt-3 text-sm text-brand">{item.change} vs 前期間</p>
+                  </article>
+                ))}
+              </div>
+            ) : null}
+
+            {dashboard.status === "missing-config" ? (
+              <div className="surface-card p-8 md:p-10">
+                <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                  Setup Required
+                </p>
+                <h2 className="mt-3 text-3xl font-bold">GA4 の設定が不足しています</h2>
+                <p className="mt-4 text-base">
+                  数値を表示するには、以下の環境変数を設定し、GA4 プロパティへサービスアカウントを閲覧権限付きで追加してください。
+                </p>
+                <div className="mt-6 grid gap-3 md:grid-cols-2">
+                  {dashboard.missingKeys.map((key) => (
+                    <div
+                      key={key}
+                      className="rounded-[24px] border border-base-border bg-base-bg/70 px-5 py-4"
+                    >
+                      <p className="font-latin text-sm font-semibold text-text-main">{key}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {dashboard.status === "error" ? (
+              <div className="surface-card p-8 md:p-10">
+                <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                  API Error
+                </p>
+                <h2 className="mt-3 text-3xl font-bold">GA4 データを取得できませんでした</h2>
+                <p className="mt-4 text-base">{dashboard.message}</p>
+              </div>
+            ) : null}
           </Container>
         </section>
 
-        <section className="pb-20 md:pb-28">
-          <Container>
-            <div className="surface-card overflow-hidden">
-              <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
-                <div className="bg-white p-8 md:p-10">
-                  <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
-                    Flow
-                  </p>
-                  <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-                    確認手順
-                  </h2>
-                  <ol className="mt-6 space-y-4">
-                    {steps.map((step, index) => (
-                      <li
-                        key={step}
-                        className="flex gap-4 rounded-[24px] border border-base-border bg-base-bg/70 p-4"
-                      >
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                          {index + 1}
-                        </span>
-                        <p className="pt-1 text-sm text-text-main md:text-base">
-                          {step}
+        {dashboard.status === "ready" ? (
+          <section className="pb-20 md:pb-28">
+            <Container>
+              <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+                <div className="surface-card p-8 md:p-10">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                      <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                        Trend
+                      </p>
+                      <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+                        7日間の推移
+                      </h2>
+                    </div>
+                    <p className="text-sm text-text-sub">
+                      更新日時: {dashboard.updatedAt}
+                    </p>
+                  </div>
+
+                  <MiniBarChart values={dashboard.trend.map((item) => item.activeUsers)} />
+
+                  <div className="mt-4 grid grid-cols-4 gap-3 text-xs text-text-sub md:grid-cols-8">
+                    {dashboard.trend.map((item) => (
+                      <div key={item.date} className="text-center">
+                        <p>{item.date.slice(5)}</p>
+                        <p className="mt-1 font-latin text-sm text-text-main">
+                          {item.activeUsers}
                         </p>
-                      </li>
+                      </div>
                     ))}
-                  </ol>
+                  </div>
                 </div>
 
-                <div className="bg-brand px-8 py-10 text-white">
-                  <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
-                    Notes
+                <div className="surface-card p-8 md:p-10">
+                  <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                    Property
                   </p>
-                  <ul className="mt-6 space-y-4 text-sm leading-8 text-white/88 md:text-base">
-                    <li>
-                      データが見えない場合は、公開 URL で複数ページを移動してから再確認してください。
-                    </li>
-                    <li>
-                      コンテンツブロッカーや広告ブロッカーが有効だと計測されないことがあります。
-                    </li>
-                    <li>
-                      本番計測は Vercel デプロイ後に有効になります。Preview / Production の切り替えも Dashboard 側で確認できます。
-                    </li>
-                  </ul>
-
-                  <div className="mt-8 rounded-[24px] border border-white/20 bg-white/10 p-5">
-                    <p className="text-sm font-semibold text-white">
-                      Dashboard path
-                    </p>
-                    <p className="mt-2 font-latin text-sm text-white/80">
-                      Project → Analytics
-                    </p>
+                  <h2 className="mt-3 text-3xl font-bold md:text-4xl">管理情報</h2>
+                  <div className="mt-6 space-y-4">
+                    <div className="rounded-[24px] border border-base-border bg-base-bg/70 p-5">
+                      <p className="text-sm text-text-sub">Measurement ID</p>
+                      <p className="mt-2 font-latin text-lg font-semibold text-text-main">
+                        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+                      </p>
+                    </div>
+                    <div className="rounded-[24px] border border-base-border bg-base-bg/70 p-5">
+                      <p className="text-sm text-text-sub">Property ID</p>
+                      <p className="mt-2 font-latin text-lg font-semibold text-text-main">
+                        {dashboard.propertyId}
+                      </p>
+                    </div>
+                    <div className="rounded-[24px] border border-base-border bg-base-bg/70 p-5">
+                      <p className="text-sm text-text-sub">集計期間</p>
+                      <p className="mt-2 text-base font-semibold text-text-main">
+                        {dashboard.rangeLabel}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-8 text-center">
-              <Link
-                href="/"
-                className="text-sm font-medium text-brand transition hover:text-brand-dark"
-              >
-                サイトへ戻って計測用のページ遷移を行う
-              </Link>
-            </div>
-          </Container>
-        </section>
+              <div className="mt-6 grid gap-6 xl:grid-cols-2">
+                <div className="surface-card p-8 md:p-10">
+                  <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                    Top Pages
+                  </p>
+                  <h2 className="mt-3 text-3xl font-bold">よく見られているページ</h2>
+                  <div className="mt-6 space-y-3">
+                    {dashboard.topPages.map((page) => (
+                      <div
+                        key={page.path}
+                        className="flex items-center justify-between gap-4 rounded-[24px] border border-base-border bg-white p-4"
+                      >
+                        <div className="min-w-0">
+                          <p className="truncate font-latin text-sm font-semibold text-text-main">
+                            {page.path}
+                          </p>
+                          <p className="mt-1 text-sm text-text-sub">
+                            ユーザー {page.users.toLocaleString("ja-JP")}
+                          </p>
+                        </div>
+                        <p className="font-latin text-lg font-semibold text-brand">
+                          {page.views.toLocaleString("ja-JP")} PV
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="surface-card p-8 md:p-10">
+                  <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                    Sources
+                  </p>
+                  <h2 className="mt-3 text-3xl font-bold">主な流入元</h2>
+                  <div className="mt-6 space-y-3">
+                    {dashboard.trafficSources.map((source) => (
+                      <div
+                        key={source.source}
+                        className="flex items-center justify-between gap-4 rounded-[24px] border border-base-border bg-white p-4"
+                      >
+                        <div className="min-w-0">
+                          <p className="truncate font-latin text-sm font-semibold text-text-main">
+                            {source.source}
+                          </p>
+                          <p className="mt-1 text-sm text-text-sub">
+                            セッション {source.sessions.toLocaleString("ja-JP")}
+                          </p>
+                        </div>
+                        <p className="font-latin text-lg font-semibold text-brand">
+                          {source.users.toLocaleString("ja-JP")} Users
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <Link
+                  href="/"
+                  className="text-sm font-medium text-brand transition hover:text-brand-dark"
+                >
+                  サイトへ戻る
+                </Link>
+              </div>
+            </Container>
+          </section>
+        ) : null}
       </main>
       <Footer />
     </>
