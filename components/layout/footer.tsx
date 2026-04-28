@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 
 export function Footer() {
@@ -11,7 +12,15 @@ export function Footer() {
           <p className="font-heading text-lg font-semibold text-text-main">合同会社マナビト</p>
           <p className="mt-1 text-sm text-text-sub">地域と人をつなぎ、学びを未来へ届ける。</p>
         </div>
-        <p className="text-sm text-text-sub">© Manabito Inc. All rights reserved.</p>
+        <div className="flex flex-col items-start gap-2 md:items-end">
+          <Link
+            href="/analytics"
+            className="text-sm font-medium text-brand transition hover:text-brand-dark"
+          >
+            Analytics
+          </Link>
+          <p className="text-sm text-text-sub">© Manabito Inc. All rights reserved.</p>
+        </div>
       </Container>
     </footer>
   );

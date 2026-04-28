@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const siteName = "合同会社マナビト";
@@ -70,6 +71,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );
