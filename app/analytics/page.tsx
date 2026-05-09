@@ -43,7 +43,6 @@ export default function AnalyticsPage() {
           src={embedUrl}
           className="h-[calc(100vh-49px)] w-full border-0"
           allowFullScreen
-          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
         />
       </main>
     </div>
