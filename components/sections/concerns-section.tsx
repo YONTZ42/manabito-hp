@@ -25,7 +25,7 @@ export function ConcernsSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {concerns.map((concern, index) => (
             <ConcernCard
               key={concern.title}
