@@ -13,6 +13,7 @@ const LOGO_IMAGE_PATH = "/images/MANABITO_LOGO.png";
 const navItems = [
   { label: "TOP", href: "/#top" },
   { label: "サービス", href: "/#services" },
+  { label: "サービス詳細", href: "/#service-details" },
   { label: "代表紹介", href: "/about" },
   { label: "最新情報", href: "/#updates" },
   { label: "お問い合わせ", href: "/#contact" },
