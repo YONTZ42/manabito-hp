@@ -12,10 +12,8 @@ const LOGO_IMAGE_PATH = "/images/MANABITO_LOGO.png";
 
 const navItems = [
   { label: "TOP", href: "/#top" },
-  { label: "お悩み", href: "/#concerns" },
   { label: "サービス", href: "/#services" },
-  { label: "サービス詳細", href: "/#service-details" },
-  { label: "代表紹介", href: "/#achievements" },
+  { label: "代表紹介", href: "/about" },
   { label: "最新情報", href: "/#updates" },
   { label: "お問い合わせ", href: "/#contact" },
 ];
@@ -72,13 +70,13 @@ export function Header() {
             className="group flex min-w-0 items-center gap-3"
             aria-label="合同会社マナビト トップへ戻る"
           >
-            <div className="relative h-11 w-11 shrink-0 overflow-hidden shadow-soft transition-transform duration-200 group-hover:scale-[1.03]">
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden transition-transform duration-200 group-hover:scale-[1.03]">
               <Image
                 src={LOGO_IMAGE_PATH}
                 alt="マナビト ロゴ"
                 fill
                 sizes="(max-width: 768px) 30vw, 50px"
-                className="object-cover"
+                className="object-contain"
                 onError={(e) => {
                   // 画像が見つからない場合はフォールバック表示
                   const target = e.currentTarget;
@@ -102,7 +100,7 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-5 lg:flex" aria-label="グローバルナビゲーション">
-            {navItems.slice(1, 6).map((item) => (
+            {navItems.slice(1).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

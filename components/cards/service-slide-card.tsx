@@ -26,14 +26,14 @@ export function ServiceSlideCard({
 return(
 <div>
     {imageSrc ? (
-      <article className="w-[260px] shrink-0 overflow-hidden rounded-2xl border border-base-border bg-white shadow-soft">
-        <div className={cn("relative h-[160px] w-full", toneClassMap[accentTone])}>
+      <article className="group w-[260px] shrink-0 overflow-hidden rounded-2xl border border-base-border bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-strong">
+        <div className={cn("relative h-[160px] w-full overflow-hidden", toneClassMap[accentTone])}>
           <Image
             src={imageSrc}
             alt={description}
             fill
             priority={title === "子ども・若者からの意見を聞きたい"}
-            className="absolute h-full w-full object-cover"
+            className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="260px"
           />
         </div>

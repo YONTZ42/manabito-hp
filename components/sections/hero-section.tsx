@@ -87,7 +87,7 @@ export function HeroSection() {
             Manabito
           </p>
 
-          <h1 className="mt-4 font-heading text-3xl font-bold leading-tight text-text-main md:text-5xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold leading-tight text-text-main md:text-6xl lg:text-7xl">
             社会を、<br className="sm:hidden" />
             大きな教室に。
           </h1>

@@ -48,16 +48,16 @@ function AnimatedElement({
 
 export function AchievementsSection() {
   return (
-    <section id="achievements" className="relative overflow-hidden bg-white py-16 md:py-24">
+    <section id="achievements" className="relative overflow-hidden bg-base-bg bg-section-yellow py-16 md:py-24">
       {/* Background decorations */}
-      <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-brand-soft/50 blur-3xl" />
+      <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-accent-yellow/25 blur-3xl" />
       <div className="absolute -right-20 bottom-20 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
 
       <Container className="relative">
         {/* Section Header */}
         <AnimatedElement className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-brand">About</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-4xl">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand">About</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold text-text-main md:text-5xl">
             なぜマナビトに<span className="key-phrase">任せられる</span>のか
           </h2>
         </AnimatedElement>

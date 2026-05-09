@@ -17,15 +17,14 @@ type ButtonProps = CommonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand !text-white shadow-soft hover:-translate-y-0.5 hover:opacity-95",
+    "bg-brand !text-white shadow-[0_4px_14px_rgba(46,111,103,0.25)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(46,111,103,0.35)] active:translate-y-0 active:shadow-[0_2px_8px_rgba(46,111,103,0.2)]",
   secondary:
-    "border border-brand/20 bg-white text-brand hover:bg-brand.soft/40",
+    "border border-brand/20 bg-white text-brand hover:bg-brand-soft/40 hover:-translate-y-0.5",
   ghost:
-    "bg-transparent text-text.main hover:bg-white/70",
+    "bg-transparent text-text-main hover:bg-white/70",
   yellow:
-    "bg-accent-yellow text-text-main hover:bg-accent-yellow/90",
-  
-  };
+    "bg-accent-yellow text-text-main shadow-[0_4px_14px_rgba(245,200,76,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(245,200,76,0.4)]",
+};
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: "h-10 px-4 text-sm",

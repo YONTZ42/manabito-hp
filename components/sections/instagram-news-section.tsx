@@ -29,10 +29,10 @@ export async function InstagramNewsSection() {
   const { posts, profileUrl, isFallback } = await getInstagramFeed();
 
   return (
-    <section id="updates" className="relative overflow-hidden bg-base-bg py-16 md:py-24">
+    <section id="updates" className="relative overflow-hidden bg-white py-16 md:py-24">
       {/* Background decorations */}
-      <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-brand-soft/40 blur-3xl" />
-      <div className="absolute -left-20 top-1/2 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-accent-sky/20 blur-3xl" />
+      <div className="absolute -left-20 top-1/2 h-56 w-56 rounded-full bg-accent-peach/15 blur-3xl" />
       
       <Container className="relative">
         <SectionHeading

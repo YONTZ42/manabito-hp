@@ -25,12 +25,15 @@ export function ConcernCard({ index, title, description, highlightWords = [], cl
   return (
     <article
       className={cn(
-        "relative rounded-2xl border border-base-border bg-white p-6 shadow-soft transition-all hover:border-brand/20 hover:shadow-strong",
+        "group relative overflow-hidden rounded-2xl border border-base-border bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-strong",
         className,
       )}
     >
+      {/* Left accent line (slides in on hover) */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-accent-yellow transition-all duration-300 -translate-x-full group-hover:translate-x-0" />
+
       {/* Number badge */}
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-latin text-sm font-bold text-white">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand font-latin text-base font-bold text-white transition-transform duration-300 group-hover:scale-110">
         {String(index).padStart(2, "0")}
       </div>
       

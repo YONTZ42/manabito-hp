@@ -16,7 +16,7 @@ export function ServiceDetailPage({ detail }: { detail: ServiceDetail }) {
 
           <Container className="relative py-20 md:py-28">
             <div className="max-w-4xl">
-              <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand">
                 Service Details
               </p>
               <p className="mt-4 inline-flex rounded-full border border-brand/20 bg-white/80 px-4 py-2 text-sm font-medium text-text-main">
@@ -29,7 +29,7 @@ export function ServiceDetailPage({ detail }: { detail: ServiceDetail }) {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/#contact">お問い合わせ</Button>
-                <Button href="/#service-details" variant="secondary">
+                <Button href="/#services" variant="secondary">
                   サービス一覧へ戻る
                 </Button>
               </div>
@@ -62,7 +62,7 @@ export function ServiceDetailPage({ detail }: { detail: ServiceDetail }) {
           <Container>
             <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
               <div className="surface-card p-8 md:p-10">
-                <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand">
                   Offerings
                 </p>
                 <h2 className="mt-3 text-3xl font-bold md:text-4xl">提供イメージ</h2>
@@ -79,7 +79,7 @@ export function ServiceDetailPage({ detail }: { detail: ServiceDetail }) {
               </div>
 
               <div className="surface-card p-8 md:p-10">
-                <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+                <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand">
                   Flow
                 </p>
                 <h2 className="mt-3 text-3xl font-bold md:text-4xl">進行の大枠</h2>
@@ -106,7 +106,7 @@ export function ServiceDetailPage({ detail }: { detail: ServiceDetail }) {
         <section className="pb-20 md:pb-28">
           <Container>
             <div className="surface-card bg-white p-8 md:p-10">
-              <p className="font-latin text-sm font-semibold uppercase tracking-[0.3em] text-brand">
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand">
                 Next Step
               </p>
               <h2 className="mt-3 text-3xl font-bold md:text-4xl">

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&family=Quicksand:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -140,6 +140,49 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #aac3bd;
+}
+
+/* セクション背景アクセント */
+.bg-section-peach {
+  background-image: radial-gradient(
+    ellipse at 80% 20%, rgba(246, 215, 195, 0.35), transparent 50%
+  );
+}
+
+.bg-section-sky {
+  background-image: radial-gradient(
+    ellipse at 20% 80%, rgba(215, 235, 247, 0.4), transparent 50%
+  );
+}
+
+.bg-section-lime {
+  background-image: radial-gradient(
+    ellipse at 60% 30%, rgba(229, 240, 207, 0.4), transparent 50%
+  );
+}
+
+.bg-section-yellow {
+  background-image: radial-gradient(
+    ellipse at 30% 70%, rgba(245, 200, 76, 0.18), transparent 50%
+  );
+}
+
+/* テキストハイライト */
+.highlight-marker {
+  background: linear-gradient(transparent 60%, rgba(245, 200, 76, 0.4) 60%);
+  font-weight: 700;
+}
+
+.underline-accent {
+  background: linear-gradient(transparent 70%, rgba(46, 111, 103, 0.15) 70%);
+  font-weight: 700;
+}
+
+/* 波線下線 */
+.underline-wavy {
+  text-decoration: underline wavy var(--brand);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 /* marquee の hover 一時停止 */
