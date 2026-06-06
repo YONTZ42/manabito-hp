@@ -19,6 +19,7 @@ The feed reads the access token from Upstash Redis first, then falls back to
 # Required for displaying the feed
 INSTAGRAM_ACCESS_TOKEN=your_long_lived_token
 INSTAGRAM_USER_ID=your_instagram_business_account_id
+INSTAGRAM_PAGE_ID=your_connected_facebook_page_id
 INSTAGRAM_PROFILE_URL=https://www.instagram.com/your_account/
 INSTAGRAM_GRAPH_API_VERSION=v23.0
 
@@ -57,6 +58,9 @@ Safe environment variable handling:
   sensitive values in Vercel.
 - Keep `INSTAGRAM_ACCESS_TOKEN` as a bootstrap fallback. After the first
   successful cron run, the live token is read from Redis.
+- `INSTAGRAM_USER_ID` must be the Instagram Business/Creator IG User ID, not a
+  Facebook Page ID. If you only have the connected Facebook Page ID, set
+  `INSTAGRAM_PAGE_ID` instead and the app will resolve the IG User ID.
 - Rotate `CRON_SECRET` and Redis tokens if they are exposed in logs, local files,
   screenshots, or chat tools.
 - The old Vercel KV product has been replaced by Marketplace Redis providers.

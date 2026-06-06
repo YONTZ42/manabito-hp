@@ -24,6 +24,12 @@ type InstagramApiResponse = {
   data?: InstagramApiMedia[];
 };
 
+type InstagramPageResponse = {
+  instagram_business_account?: {
+    id?: string;
+  };
+};
+
 type InstagramApiErrorResponse = {
   error?: {
     message?: string;
@@ -103,23 +109,93 @@ function buildFallbackFeed(): InstagramFeed {
   };
 }
 
-export async function getInstagramFeed(): Promise<InstagramFeed> {
-  const accessToken = await getInstagramAccessToken();
-  const userId = process.env.INSTAGRAM_USER_ID?.trim();
+function getInstagramApiErrorDetails(errorPayload?: InstagramApiErrorResponse) {
+  const error = errorPayload?.error;
 
-  if (!accessToken || !userId) {
-    console.warn("[Instagram] Feed fallback: missing access token or user ID");
-    return buildFallbackFeed();
+  return [
+    error?.message,
+    error?.type ? `type=${error.type}` : undefined,
+    typeof error?.code === "number" ? `code=${error.code}` : undefined,
+    typeof error?.error_subcode === "number"
+      ? `subcode=${error.error_subcode}`
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
+async function assertInstagramResponse(response: Response, context: string) {
+  if (response.ok) {
+    return;
+  }
+
+  const errorPayload = (await response.json().catch(
+    () => undefined,
+  )) as InstagramApiErrorResponse | undefined;
+  const details = getInstagramApiErrorDetails(errorPayload);
+
+  throw new Error(
+    `${context} failed with ${response.status}${details ? `: ${details}` : ""}`,
+  );
+}
+
+async function resolveInstagramUserId(accessToken: string) {
+  const configuredInstagramUserId = process.env.INSTAGRAM_USER_ID?.trim();
+
+  if (configuredInstagramUserId) {
+    return configuredInstagramUserId;
+  }
+
+  const pageId = process.env.INSTAGRAM_PAGE_ID?.trim();
+
+  if (!pageId) {
+    return undefined;
   }
 
   const searchParams = new URLSearchParams({
-    fields:
-      "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,username",
-    limit: String(INSTAGRAM_POST_LIMIT),
+    fields: "instagram_business_account",
     access_token: accessToken,
   });
+  const response = await fetch(
+    `https://graph.facebook.com/${INSTAGRAM_GRAPH_API_VERSION}/${pageId}?${searchParams.toString()}`,
+    {
+      next: {
+        revalidate: INSTAGRAM_REVALIDATE_SECONDS,
+        tags: ["instagram-posts"],
+      },
+    },
+  );
+
+  await assertInstagramResponse(response, "Instagram Page lookup");
+
+  const payload = (await response.json()) as InstagramPageResponse;
+  return payload.instagram_business_account?.id;
+}
+
+export async function getInstagramFeed(): Promise<InstagramFeed> {
+  const accessToken = await getInstagramAccessToken();
+
+  if (!accessToken) {
+    console.warn("[Instagram] Feed fallback: missing access token");
+    return buildFallbackFeed();
+  }
 
   try {
+    const userId = await resolveInstagramUserId(accessToken);
+
+    if (!userId) {
+      console.warn(
+        "[Instagram] Feed fallback: missing INSTAGRAM_USER_ID or INSTAGRAM_PAGE_ID",
+      );
+      return buildFallbackFeed();
+    }
+
+    const searchParams = new URLSearchParams({
+      fields:
+        "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,username",
+      limit: String(INSTAGRAM_POST_LIMIT),
+      access_token: accessToken,
+    });
     const response = await fetch(
       `https://graph.facebook.com/${INSTAGRAM_GRAPH_API_VERSION}/${userId}/media?${searchParams.toString()}`,
       {
@@ -130,28 +206,7 @@ export async function getInstagramFeed(): Promise<InstagramFeed> {
       },
     );
 
-    if (!response.ok) {
-      const errorPayload = (await response.json().catch(
-        () => undefined,
-      )) as InstagramApiErrorResponse | undefined;
-      const error = errorPayload?.error;
-      const details = [
-        error?.message,
-        error?.type ? `type=${error.type}` : undefined,
-        typeof error?.code === "number" ? `code=${error.code}` : undefined,
-        typeof error?.error_subcode === "number"
-          ? `subcode=${error.error_subcode}`
-          : undefined,
-      ]
-        .filter(Boolean)
-        .join(" ");
-
-      throw new Error(
-        `Instagram API request failed with ${response.status}${
-          details ? `: ${details}` : ""
-        }`,
-      );
-    }
+    await assertInstagramResponse(response, "Instagram media request");
 
     const payload = (await response.json()) as InstagramApiResponse;
     const posts =
