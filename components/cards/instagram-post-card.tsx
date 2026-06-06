@@ -31,14 +31,14 @@ export function InstagramPostCard({
 }: InstagramPostCardProps) {
   const content = (
     <>
-      <div className="relative aspect-square overflow-hidden bg-hero-grid">
+      <div className="relative grid aspect-square overflow-hidden bg-hero-grid">
         {imageUrl ? (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imageUrl}
               alt={title}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="!h-full w-full !max-w-none object-cover transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
             />
           </>
