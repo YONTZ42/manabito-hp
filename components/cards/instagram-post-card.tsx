@@ -75,7 +75,7 @@ export function InstagramPostCard({
   );
 
   const classes = cn(
-    "group overflow-hidden rounded-[24px] border border-base-border bg-white shadow-soft transition-transform hover:scale-[1.02]",
+    "group min-w-0 overflow-hidden rounded-[24px] border border-base-border bg-white shadow-soft transition-transform hover:scale-[1.02]",
     className,
   );
 

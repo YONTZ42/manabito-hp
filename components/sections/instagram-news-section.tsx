@@ -43,9 +43,9 @@ export async function InstagramNewsSection() {
           descriptionColor="rgb(36, 53, 51)"
         />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div>
-            <div className="mb-4 flex items-center justify-between gap-4">
+        <div className="mt-12 grid min-w-0 gap-8 lg:grid-cols-2">
+          <div className="min-w-0">
+            <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <h3 className="inline-flex items-center gap-2 font-heading text-2xl font-bold text-text-main">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white shadow-soft">
                   <InstagramIcon className="h-5 w-5" />
@@ -56,7 +56,7 @@ export async function InstagramNewsSection() {
                 href={profileUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-brand/20 bg-white px-4 py-2 text-sm font-medium text-brand transition-colors hover:bg-brand-soft/50"
+                className="inline-flex w-fit items-center justify-center rounded-full border border-brand/20 bg-white px-4 py-2 text-sm font-medium text-brand transition-colors hover:bg-brand-soft/50"
               >
                 プロフィールを見る
               </a>
@@ -64,7 +64,7 @@ export async function InstagramNewsSection() {
             <InstagramPostCarousel posts={posts} profileUrl={profileUrl} />
           </div>
 
-          <div>
+          <div className="min-w-0">
             <div className="mb-4">
               <h3 className="font-heading text-2xl font-bold text-text-main">
                 NEWS

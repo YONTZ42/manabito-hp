@@ -107,7 +107,7 @@ export function AchievementsSection() {
                 <p className="text-xs font-medium text-brand">教育現場</p>
                 <p className="mt-1 font-heading text-xl font-bold text-brand-dark">5<span className="text-xs">年以上</span></p>
               </div>
-              <div className="flex-1 rounded-xl bg-brand-soft/50 px-4 py-3 text-center">
+              <div className="flex-1 min-w-[140px] rounded-xl bg-brand-soft/50 px-4 py-3 text-center">
                 <p className="text-xs font-medium text-brand">NPO代表</p>
                 <p className="mt-1 font-heading text-xl font-bold text-brand-dark">現職</p>
               </div>

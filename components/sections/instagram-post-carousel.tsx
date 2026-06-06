@@ -46,14 +46,14 @@ export function InstagramPostCarousel({
   }
 
   return (
-    <div className="relative">
+    <div className="relative min-w-0 max-w-full">
       <div
         ref={scrollRef}
-        className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-4 scroll-smooth"
+        className="flex max-w-full snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-4 scroll-smooth"
       >
         {posts.map((post, index) => (
           <div
-            className="flex shrink-0 basis-[82%] snap-start sm:basis-[72%] lg:basis-[78%]"
+            className="flex min-w-0 shrink-0 basis-[82%] snap-start sm:basis-[72%] lg:basis-[78%]"
             key={post.id}
           >
             <InstagramPostCard
@@ -73,7 +73,7 @@ export function InstagramPostCarousel({
           href={profileUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex min-h-[420px] shrink-0 basis-[82%] snap-start flex-col justify-between rounded-[24px] border border-brand/20 bg-brand p-6 text-white shadow-soft transition hover:-translate-y-1 hover:shadow-strong sm:basis-[72%] lg:basis-[78%]"
+          className="flex min-h-[420px] min-w-0 shrink-0 basis-[82%] snap-start flex-col justify-between rounded-[24px] border border-brand/20 bg-brand p-6 text-white shadow-soft transition hover:-translate-y-1 hover:shadow-strong sm:basis-[72%] lg:basis-[78%]"
         >
           <div>
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white">
