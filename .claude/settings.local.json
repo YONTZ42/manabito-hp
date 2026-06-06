@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.manabito.info)",
+      "Bash(xargs wc:*)",
+      "Bash(grep -E '\\\\.\\(tsx?|json|md\\)$')",
+      "Bash(npm run:*)",
+      "Bash(grep -E \"\\(\\\\\\\\.env|package\\\\\\\\.json\\)$\")",
+      "Bash(ls -la \"C:\\\\AppDev\\\\manabito-hp/.env\"*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:codateru.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe status:*)",
+      "Bash(npx next:*)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(C:/Program Files/nodejs/npx.cmd next:*)",
+      "Bash(timeout 8)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe rm:*)",
+      "Bash(del:*)",
+      "Bash(cmd:*)",
+      "Bash(C:/Program Files/nodejs/npx.cmd:*)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe log:*)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe diff:*)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe add:*)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe commit:*)",
+      "Bash(C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe push:*)"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { instagramPosts } from "@/data/instagram-posts";
+import { getInstagramAccessToken } from "@/lib/instagram-token-store";
 
 const INSTAGRAM_GRAPH_API_VERSION =
   process.env.INSTAGRAM_GRAPH_API_VERSION ?? "v23.0";
@@ -94,7 +95,7 @@ function buildFallbackFeed(): InstagramFeed {
 }
 
 export async function getInstagramFeed(): Promise<InstagramFeed> {
-  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN?.trim();
+  const accessToken = await getInstagramAccessToken();
   const userId = process.env.INSTAGRAM_USER_ID?.trim();
 
   if (!accessToken || !userId) {

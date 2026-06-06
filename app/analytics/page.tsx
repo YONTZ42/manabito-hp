@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Analytics",
@@ -30,12 +31,12 @@ export default function AnalyticsPage() {
           <p className="font-heading text-lg font-bold text-text-main">
             Analytics
           </p>
-          <a
+          <Link
             href="/"
             className="text-sm font-medium text-brand transition hover:text-brand-dark"
           >
             ← サイトに戻る
-          </a>
+          </Link>
         </div>
       </header>
       <main className="flex-1">
