@@ -61,7 +61,7 @@ export async function InstagramNewsSection() {
                 プロフィールを見る
               </a>
             </div>
-            <InstagramPostCarousel posts={posts} />
+            <InstagramPostCarousel posts={posts} profileUrl={profileUrl} />
           </div>
 
           <div>
