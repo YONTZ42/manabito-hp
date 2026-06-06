@@ -8,6 +8,8 @@ import { ServiceDetailsSection } from "@/components/sections/service-details-sec
 import { ServicesSection } from "@/components/sections/services-section";
 import { WaveDivider } from "@/components/ui/wave-divider";
 
+export const dynamic = "force-dynamic";
+
 export default function Page() {
   return (
     <>

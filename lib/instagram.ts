@@ -24,6 +24,15 @@ type InstagramApiResponse = {
   data?: InstagramApiMedia[];
 };
 
+type InstagramApiErrorResponse = {
+  error?: {
+    message?: string;
+    type?: string;
+    code?: number;
+    error_subcode?: number;
+  };
+};
+
 export type InstagramPost = {
   id: string;
   title: string;
@@ -122,7 +131,26 @@ export async function getInstagramFeed(): Promise<InstagramFeed> {
     );
 
     if (!response.ok) {
-      throw new Error(`Instagram API request failed with ${response.status}`);
+      const errorPayload = (await response.json().catch(
+        () => undefined,
+      )) as InstagramApiErrorResponse | undefined;
+      const error = errorPayload?.error;
+      const details = [
+        error?.message,
+        error?.type ? `type=${error.type}` : undefined,
+        typeof error?.code === "number" ? `code=${error.code}` : undefined,
+        typeof error?.error_subcode === "number"
+          ? `subcode=${error.error_subcode}`
+          : undefined,
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      throw new Error(
+        `Instagram API request failed with ${response.status}${
+          details ? `: ${details}` : ""
+        }`,
+      );
     }
 
     const payload = (await response.json()) as InstagramApiResponse;
