@@ -1,3 +1,4 @@
+import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { cn } from "@/lib/utils";
 
 type InstagramPostCardProps = {
@@ -56,7 +57,10 @@ export function InstagramPostCard({
         ) : null}
       </div>
       <div className="p-4">
-        <p className="text-xs font-medium text-brand">Instagram</p>
+        <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand">
+          <InstagramIcon className="h-4 w-4" />
+          Instagram
+        </p>
         <h3 className="mt-2 font-heading text-base font-bold text-text-main">
           {title}
         </h3>

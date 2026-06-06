@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ConcernsSection } from "@/components/sections/concerns-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -22,6 +23,8 @@ export default function Page() {
         <ServicesSection />
         <WaveDivider fillColor="fill-white" variant="slant" />
         <ServiceDetailsSection />
+        <WaveDivider fillColor="fill-[#fbf8f1]" variant="wave" />
+        <AchievementsSection />
         <WaveDivider fillColor="fill-white" variant="wave" />
         <InstagramNewsSection />
         <WaveDivider fillColor="fill-[#2e6f67]" variant="curve" />

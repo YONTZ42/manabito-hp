@@ -1,4 +1,5 @@
-import { InstagramPostCard } from "@/components/cards/instagram-post-card";
+import { InstagramIcon } from "@/components/icons/instagram-icon";
+import { InstagramPostCarousel } from "@/components/sections/instagram-post-carousel";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getInstagramFeed } from "@/lib/instagram";
@@ -45,7 +46,10 @@ export async function InstagramNewsSection() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div>
             <div className="mb-4 flex items-center justify-between gap-4">
-              <h3 className="font-heading text-2xl font-bold text-text-main">
+              <h3 className="inline-flex items-center gap-2 font-heading text-2xl font-bold text-text-main">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white shadow-soft">
+                  <InstagramIcon className="h-5 w-5" />
+                </span>
                 Instagram
               </h3>
               <a
@@ -57,20 +61,7 @@ export async function InstagramNewsSection() {
                 プロフィールを見る
               </a>
             </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {posts.map((post, index) => (
-                <InstagramPostCard
-                  key={post.id}
-                  title={post.title}
-                  date={post.date}
-                  caption={post.caption}
-                  href={post.permalink}
-                  imageUrl={post.imageUrl}
-                  mediaType={post.mediaType}
-                  colorIndex={index}
-                />
-              ))}
-            </div>
+            <InstagramPostCarousel posts={posts} />
           </div>
 
           <div>
