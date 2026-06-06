@@ -26,7 +26,7 @@ function ComingSoonCard({ title, icon }: { title: string; icon: React.ReactNode 
 }
 
 export async function InstagramNewsSection() {
-  const { posts, profileUrl, isFallback } = await getInstagramFeed();
+  const { posts, profileUrl } = await getInstagramFeed();
 
   return (
     <section id="updates" className="relative overflow-hidden bg-white py-16 md:py-24">
@@ -71,12 +71,6 @@ export async function InstagramNewsSection() {
                 />
               ))}
             </div>
-            {isFallback ? (
-              <p className="mt-4 text-sm leading-6 text-text-sub">
-                <code>INSTAGRAM_ACCESS_TOKEN</code> と{" "}
-                <code>INSTAGRAM_USER_ID</code> が未設定のため、現在はダミー投稿を表示しています。
-              </p>
-            ) : null}
           </div>
 
           <div>

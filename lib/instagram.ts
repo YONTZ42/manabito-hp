@@ -99,6 +99,7 @@ export async function getInstagramFeed(): Promise<InstagramFeed> {
   const userId = process.env.INSTAGRAM_USER_ID?.trim();
 
   if (!accessToken || !userId) {
+    console.warn("[Instagram] Feed fallback: missing access token or user ID");
     return buildFallbackFeed();
   }
 
@@ -148,7 +149,8 @@ export async function getInstagramFeed(): Promise<InstagramFeed> {
       profileUrl: getProfileUrl(payload.data?.[0]?.username),
       isFallback: false,
     };
-  } catch {
+  } catch (error) {
+    console.error("[Instagram] Feed fetch failed:", error);
     return buildFallbackFeed();
   }
 }
